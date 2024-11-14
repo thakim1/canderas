@@ -1,0 +1,1 @@
+docker run -it --rm --network host --runtime nvidia -v /home/cdleml/canderas_prjct/:/home/canderas_prjct nvcr.io/nvidia/l4t-ml:r32.7.1-py3
