@@ -28,42 +28,42 @@ Dependencies:
 - test_l4tml_container.py: Tests the container
 - showcase.py ... TODO
 
-- ## Important Resources 
+## Important Resources 
 
-- DustyNV - jetson intefernce tutorial
+### Dev Links
+- DustyNV - Jetson Intefernce Tutorial:
 https://github.com/dusty-nv/jetson-inference/tree/master
-- Basic Medium Blog Post
+- Basic Medium Blog Post on TensorRT:
 https://vilsonrodrigues.medium.com/a-friendly-introduction-to-tensorrt-building-engines-de8ae0b74038
 
-- General TensorRT Repo by NVIDIA
+- General TensorRT Repo by NVIDIA:
 https://github.com/NVIDIA/TensorRT
 
-- Cuda Toolkit download site
+- Cuda Toolkit Download Site:
 https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&target_arch=ppc64le&target_distro=Ubuntu&target_version=1804&target_type=debnetwork
 
-- TensorRT Quickstart
+- TensorRT Quickstart:
 https://docs.nvidia.com/deeplearning/tensorrt/quick-start-guide/index.html
-- TensorRT Install Guide
+- TensorRT Install Guide:
 https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#installing-tar
-- TensorRT containers release notes 
+- TensorRT Containers Release Notes:
 https://docs.nvidia.com/deeplearning/tensorrt/container-release-notes/index.html#rel_20-11
-- TensorRT Developer Guide 
+- TensorRT Developer Guide:
 https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html#object-lifetimes
-- TensorRT Python API Documentation
+- TensorRT Python API Documentation:
 https://docs.nvidia.com/deeplearning/tensorrt/api/python_api/index.html
 
-
-- Container Catalog 
+### Docker Container Resources:
+- Container Catalog:
 https://catalog.ngc.nvidia.com/containers?filters=architecture%7CMulti+Arch%7Ccontainers_multiarch&orderBy=weightPopularDESC&query=&page=&pageSize=
 
-- x86 pytorch cuda container
+- x86 pytorch CUDA Container:
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch
-
-- Jetson pytorch cuda container
+- Jetson pytorch CUDA Container:
 https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-pytorch
-
-- Jetson Zoo
+- Jetson Pytorch Container Reference on Github:
+https://github.com/dusty-nv/jetson-containers/tree/master/packages/l4t/l4t-pytorch
+- Jetson Zoo:
 https://elinux.org/Jetson_Zoo#PyTorch_.28Caffe2.29
 
-- Pytorch Container
-https://github.com/dusty-nv/jetson-containers/tree/master/packages/l4t/l4t-pytorch
+
