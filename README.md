@@ -2,8 +2,10 @@
 
 is maintained by Fabian Seiler, Karel Rusy, Hakim Tayari
 
-Hardware: Jetson Xavier
-Docker image: nvcr.io/nvidia/l4t-ml:r32.7.1-py3
+## General Info
+
+Hardware: Jetson Xavier, Platform: 4.9.253-tegra
+Docker base image: nvcr.io/nvidia/l4t-ml:r32.7.1-py3
 Dependencies: 
  - Python: 3.6.9
  - CUDA: 10.2.300
@@ -11,9 +13,27 @@ Dependencies:
  - TensorRT: 8.2.1.8
  - Jetpack 4.6.2
  - Ubuntu: 18.04 Bionic Beaver
- - Platform: 4.9.253-tegra
- - 
 
+Python3.6 compatible versions of used libs: 
+ - einops==?  einops doesn't say to run with Python3.6
+ - torch-summary==1.4.5 
+ - pillow==8.4.0  
+ - timm==0.6.12 
+ - pandas==1.1.5 
+ - scikit-learn==0.24.2
+ - matplotlib==3.3.4 
+ - tqdm==4.64.1 
+ - opencv-python-headless  opencv-python-headless works with all python versions >= 3.6
+
+# Table of Contents
+
+1. [Folder Structure](#folder-structure)
+2. [Important Resources](#important-resources) 
+3. [Contributing](#contributing)
+4. [License](#license)
+5. [Acknowledgments](#acknowledgments)
+
+---
 
 ## Folder Structure
 
@@ -29,6 +49,20 @@ Dependencies:
 - showcase.py ... TODO
 
 ## Important Resources 
+
+### Some commands to get along with docker easily 
+- Start docker container
+`docker run -it --rm --network host --runtime nvidia -v /home/cdleml/canderas/:/home/canderas <name>`
+In case of the unmodified image the name will just be the base image nvcr.io/nvidia/l4t-ml:r32.7.1-py3r
+
+- Show running containers
+`docker ps`
+
+- Enter new shell of currently running container
+`docker exec -it <name of container> sh` # If the container has not been given a distinct name in docker run command it will show as a some identifier
+
+- Build new image from existing base image using Dockerfile in working directory
+`docker build -t <image_name> .`
 
 ### Dev Links
 - DustyNV - Jetson Intefernce Tutorial:
