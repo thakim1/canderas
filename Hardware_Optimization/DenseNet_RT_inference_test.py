@@ -1,5 +1,5 @@
-""" Test script for model_DenseNet_epochs_10_lr_0.0003_gammaStepLR_0:
-(1) Loading trained model from Training/Models/...
+""" Test script for converting all the models to ONNX and TRT format:
+(1) Loading trained model from ../Training/Models/...
 (2) Converting model to ONNX and save as .onnx
 (3) Converting .onnx to tensorRT model and save as .trt
 (4) Testing .trt model inference on image data from Images/...
@@ -87,14 +87,79 @@ def get_model(model_name):
     """
     # TODO: Add remaining models...
 
+    
+
     # Load the model and change classification layer
-    if model_name == 'DenseNet':
+    if model_name == 'DenseNetGLR0':
         model = models.densenet121(pretrained=False)
         model.classifier = nn.Sequential(
             nn.Linear(in_features=model.classifier.in_features, out_features=1), 
             nn.Sigmoid()
         ) # From Fabian's eval script 'evaluate_model.py'
-        model.load_state_dict(torch.load('Training/Models/model_DenseNet_epochs_10_lr_0.0003_gammaStepLR_0'))
+        model.load_state_dict(torch.load('../Training/Models/model_DenseNet_epochs_10_lr_0.0003_gammaStepLR_0'))
+
+    if model_name == 'DenseNetGLR01':
+        model = models.densenet121(pretrained=False)
+        model.classifier = nn.Sequential(
+            nn.Linear(in_features=model.classifier.in_features, out_features=1), 
+            nn.Sigmoid()
+        ) 
+        model.load_state_dict(torch.load('../Training/Models/model_DenseNet_epochs_20_lr_0.0003_gammaStepLR_0.1'))
+
+    # Requires torchvision==0.15
+    #if model_name == 'EfficientNetV2GLR0':
+    #    model = models.efficientnet_v2_s(pretrained=False)
+    #    model.classifier = nn.Sequential(
+    #        nn.Linear(in_features=model.classifier.in_features, out_features=1), 
+    #        nn.Sigmoid()
+    #    ) 
+    #    model.load_state_dict(torch.load('../Training/Models/model_EfficientNet_epochs_10_lr_0.0003_gammaStepLR_0'))
+
+    # Requires torchvision==0.15
+    #if model_name == 'EfficientNetV2GLR01':
+    #    model = models.efficientnet_v2_s(pretrained=False)
+    #    model.classifier = nn.Sequential(
+    #        nn.Linear(in_features=model.classifier.in_features, out_features=1), 
+    #        nn.Sigmoid()
+    #    ) 
+    #    model.load_state_dict(torch.load('../Training/Models/model_EfficientNet_epochs_20_lr_0.0003_gammaStepLR_0.1'))
+
+    if model_name == 'MobileNetV2GLR0':
+        model = models.mobilenet_v2(pretrained=False)
+        model.classifier[1] = nn.Sequential(nn.Linear(in_features=1280, out_features=1), nn.Sigmoid())
+        
+        model.load_state_dict(torch.load('../Training/Models/model_MobileNetV2_epochs_10_lr_0.0003_gammaStepLR_0'))
+
+    if model_name == 'MobileNetV2GLR01':
+        model = models.mobilenet_v2(pretrained=False)
+        model.classifier[1] = nn.Sequential(nn.Linear(in_features=1280, out_features=1), nn.Sigmoid())
+
+        model.load_state_dict(torch.load('../Training/Models/model_MobileNetV2_epochs_20_lr_0.0003_gammaStepLR_0.1'))
+    
+    if model_name == 'MobileNetV3_LargeGLR01':
+        model = models.mobilenet_v3_large(pretrained=False)
+        model.classifier[3] = nn.Sequential(nn.Linear(in_features=1280, out_features=1), nn.Sigmoid())        
+        model.load_state_dict(torch.load('../Training/Models/model_MobileNetV3_big_epochs_20_lr_0.0003_gammaStepLR_0.1'))
+
+    if model_name == 'MobileNetV3GLR0':
+        model = models.mobilenet_v3_small(pretrained=False)
+        model.classifier[3] = nn.Sequential(nn.Linear(in_features=1024, out_features=1), nn.Sigmoid())
+        model.load_state_dict(torch.load('../Training/Models/model_MobileNetV3_epochs_10_lr_0.0003_gammaStepLR_0'))    
+        
+    if model_name == 'MobileNetV3GLR01':
+        model = models.mobilenet_v3_small(pretrained=False)
+        model.classifier[3] = nn.Sequential(nn.Linear(in_features=1024, out_features=1), nn.Sigmoid())
+        model.load_state_dict(torch.load('../Training/Models/model_MobileNetV3_epochs_20_lr_0.0003_gammaStepLR_0.1'))        
+	
+    if model_name == 'ResNet18GLR0':
+        model = models.resnet18(pretrained=False)
+        model.fc = nn.Sequential(nn.Linear(model.fc.in_features, 1), nn.Sigmoid())
+        model.load_state_dict(torch.load('../Training/Models/model_ResNet18_epochs_10_lr_0.0003_gammaStepLR_0'))        
+
+    if model_name == 'ResNet18GLR01':
+        model = models.resnet18(pretrained=False)
+        model.fc = nn.Sequential(nn.Linear(model.fc.in_features, 1), nn.Sigmoid())
+        model.load_state_dict(torch.load('../Training/Models/model_ResNet18_epochs_20_lr_0.0003_gammaStepLR_0.1')) 
 
     return model
 
@@ -215,8 +280,11 @@ def infer(engine, d_input, d_output, bindings, image_tensor):
 
 if __name__ == '__main__':
 
-    img_folder = "./Images"
-    trained_models = ['DenseNet'] # ,'ResNet',...]
+    img_folder = "../Images"
+    trained_models = ['DenseNetGLR0', 'DenseNetGLR01', #'EfficientNetV2GLR0', 'EfficientNetV2GLR01',
+                      'MobileNetV2GLR0', 
+                      'MobileNetV2GLR01', 'MobileNetV3_LargeGLR01', 'MobileNetV3GLR0', 'MobileNetV3GLR01', 'ResNet18GLR0',
+                      'ResNet18GLR01' ]
 
     for model_name in trained_models:
         # Load Model
@@ -236,7 +304,7 @@ if __name__ == '__main__':
 
         # Export to ONNX format
         input_format = torch.randn(1,3,224,224).to(device)
-        onnx_output_path = "denseNet_test.onnx"
+        onnx_output_path = model_name +".onnx"
         torch.onnx.export(
             model, 
             input_format, 
@@ -248,7 +316,7 @@ if __name__ == '__main__':
         print(f"Model exported to ONNX at {onnx_output_path}")
 
         # Export to tensorRT format
-        trt_model_path = "denseNet_test.trt"
+        trt_model_path = model_name + ".trt"
         convert_onnx_to_tensorrt(onnx_output_path, trt_model_path)
 
         # Load TensoRT engine
