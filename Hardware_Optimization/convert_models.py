@@ -30,24 +30,49 @@ def convert_onnx_to_tensorrt(onnx_model_path, trt_model_path):
 
     
     """
+    # Print only warnings to keep output clean 
     logger = trt.Logger(trt.Logger.WARNING)
     builder = trt.Builder(logger)
-    network = builder.create_network(1 << int(trt.NetworkDefinitionCreationFlag.EXPLICIT_BATCH))
-    parser = trt.OnnxParser(network, logger)
-    
+    NetworkDefinitionCreationFlags = trt.NetworkDefinitionCreationFlag.EXPLICIT_BATCH # ... more options possible?
+    network = builder.create_network(1 << int(NetworkDefinitionCreationFlags))
+
     # Parse the ONNX model
+    parser = trt.OnnxParser(network, logger)
     with open(onnx_model_path, 'rb') as onnx_model:
         if not parser.parse(onnx_model.read()):
             print("ERROR: Failed to parse ONNX model")
             return
+    # Parse model end
     
-    engine = builder.build_engine(network, builder.create_builder_config())
-    
+    # For Default 
     # Save the TensorRT engine to .trt file
-    with open(trt_model_path, 'wb') as trt_model:
+    engine = builder.build_engine(network, builder.create_builder_config())
+    with open(trt_model_path + ".trt", 'wb') as trt_model:
+        print("Creating default prec model...")
         trt_model.write(engine.serialize())
-    
-    print(f"TensorRT model saved to {trt_model_path}")
+    print(f"TensorRT model saved to {trt_model_path}.trt")
+
+    # For INT8
+    config_int8 = builder.create_builder_config()
+    config_int8.set_flag(trt.BuilderFlag.INT8)
+    # Enable INT8 calibration if needed
+    # config_int8.int8_calibrator = my_calibrator # Implement a calibrator if needed
+    engine_int8 = builder.build_engine(network, config_int8)
+    if engine_int8: # Needs Calibrator to work, missing atm
+        print("Creating INT8 prec model...")
+        with open(trt_model_path+"INT8.trt", 'wb') as trt_model:
+            trt_model.write(engine_int8.serialize())
+        print(f"TensorRT model saved to {trt_model_path}INT8.trt")
+
+    # For FP16
+    config_fp16 = builder.create_builder_config()
+    config_fp16.set_flag(trt.BuilderFlag.FP16)
+    engine_fp16 = builder.build_engine(network, config_fp16)
+    if engine_fp16:
+        print("Creating FP16 prec model...")
+        with open(trt_model_path+"FP16.trt", 'wb') as trt_model:
+            trt_model.write(engine_fp16.serialize())
+    print(f"TensorRT model saved to {trt_model_path}FP16.trt")
 
 
 def get_model(model_name):
@@ -100,22 +125,19 @@ if __name__ == '__main__':
 
     img_folder = "../Images"
     trained_models = ['DenseNet', 'MobileNetV2', 'MobileNetV3', 'MobileNetV3_Large', 'ResNet18']
+    precision = ['', 'INT8', 'FP16']
 
     for model_name in trained_models:
         # Load Model
         print(f"-------------{model_name}-------------")
         model = get_model(model_name)
 
-        #### To CUDA section #### 
         device = "cpu"  # Initially set to CPU
         if torch.cuda.is_available():
             device = "cuda"  # Use CUDA if available
             print("Using CUDA.")
         model.to(device)
         model.eval()
-        #### To CUDA section end ####
-
-        #### TensorRT section ####
 
         # Export to ONNX format
         input_format = torch.randn(1,3,224,224).to(device)
@@ -130,35 +152,45 @@ if __name__ == '__main__':
         )
         print(f"Model exported to ONNX at {onnx_output_path}")
 
-        # Export to tensorRT format
-        trt_model_path = model_name + ".trt"
-        convert_onnx_to_tensorrt(onnx_output_path, trt_model_path)
+        # Convert to .trt: default, INT8 and FP16
+        convert_onnx_to_tensorrt(onnx_output_path, model_name)
 
-        # Load TensoRT engine
-        print("Loading TensorRT engine.")
-        trt_logger = trt.Logger(trt.Logger.WARNING)
-        trt_engine = load_trt_engine(trt_logger, trt_model_path)
+    ####### Test inference on converted models #######
+    for model_name in trained_models:
+        for p in precision:
+            print(f"-------------{model_name + ' ' +p}-------------")
 
-        #### TensorRT section end ####
+            # Export to tensorRT format
+            trt_model_path = model_name + p + '.trt'
+            print(f"Check if file {trt_model_path} exists...")
+            if not os.path.exists(trt_model_path):
+                print(f"Model not found... trying next.")
+                continue
 
-        # Load Images
-        print("Loading test images.")
-        images = load_test_images(img_folder)
+            # Load TensoRT engine
+            print(f"Found... loading TensorRT engine {model_name + p + '.trt'}")
+            trt_logger = trt.Logger(trt.Logger.WARNING)
+            trt_engine = load_trt_engine(trt_logger, trt_model_path)
 
-        # Allocate memory w/ CUDA      
-        print("Allocating GPU memory.")
-        d_input, d_output, bindings = allocate_buffers(trt_engine)
+            # Load Images
+            print("Loading test images...")
+            images = load_test_images(img_folder)
 
-        # Evaluate Images
-        for i, image in enumerate(images):
-            anom = image["anomaly"]
-            img = image["image"]
-            filename = image["file-name"]
+            # Allocate memory w/ CUDA      
+            print("Allocating GPU memory...")
+            d_input, d_output, bindings = allocate_buffers(trt_engine)
 
-            # Move img to GPU and do inference:
-            image_in = img.unsqueeze(0).to(device)
-            print("Inference for ", filename, ":", i ,"/",len(images)-1, " Groundtruth: anomaly ", anom)
-            inference = perform_inference(trt_engine, d_input, d_output, bindings, image_in)
+            # Evaluate Images
+            for i, image in enumerate(images):
+                anom = image["anomaly"]
+                img = image["image"]
+                filename = image["file-name"]
 
-            # Print results
-            print(f"Result: Found anomaly with {inference*100}% confidence") # Maybe use softmax?    
+                # Move img to GPU and do inference:
+                image_in = img.unsqueeze(0).to(device)
+                print("Inference ", filename, ":", i ,"/",len(images)-1, ", has anomaly y/n : 1/0 ", anom)
+                inference = perform_inference(trt_engine, d_input, d_output, bindings, image_in)
+
+                # Print results
+                print(f"Found anomaly with {inference[0]*100}%") # Maybe use softmax?    
+

@@ -23,6 +23,23 @@ def load_trt_engine(trt_logger, engine_file):
         engine: ...
     
     """
+    # From NVIDIA DEV DOCUMENTATION: 
+    # When you have a previously serialized optimized model and want to
+    # perform inference, you must first create an instance of the Runtime 
+    # interface. Like the builder, the runtime requires an instance of the 
+    # logger.
+    # 
+    # Used here: 'In-memory Deserialization' 
+    # This method is straightforward and suitable for smaller models or when 
+    # memory isn't a constraint. Read the plan file into a memory buffer.
+    # 
+    # When choosing a deserialization method, consider your specific requirements:
+    # - For small models or simple use cases, in-memory deserialization is often 
+    #   sufficient.
+    # - For large models or when memory efficiency is crucial, consider using 
+    #   trt.IStreamReaderV2.
+    # - If you need custom file handling or streaming capabilities, trt.IStreamReaderV2 
+    #   provides the necessary flexibility
 
     with open(engine_file, 'rb') as f:
         engine_data = f.read()
@@ -46,7 +63,7 @@ def allocate_buffers(engine):
     
     """
 
-    bindings = []
+    #bindings = []
     input_binding_idx = engine.get_binding_index('input')
     output_binding_idx = engine.get_binding_index('output')
 
@@ -56,10 +73,11 @@ def allocate_buffers(engine):
 
     d_input = cuda.mem_alloc(input_size * np.dtype(dtype).itemsize)
     d_output = cuda.mem_alloc(output_size * np.dtype(dtype).itemsize)
-    bindings.append(int(d_input))
-    bindings.append(int(d_output))
+    #bindings.append(int(d_input))
+    #bindings.append(int(d_output))
+    bindings = [int(d_input), int(d_output)]
 
-    return d_input, d_output, bindings
+    return d_input, d_output, bindings 
 
 def perform_inference(engine, d_input, d_output, bindings, image_tensor):
     """
@@ -77,11 +95,28 @@ def perform_inference(engine, d_input, d_output, bindings, image_tensor):
     
     
     """
+    # From NVIDIA DEV DOCUMENTATION: 
+    # Engine holds optimized model but inference requires additional state for 
+    # intermediate activations. This is done via the execution_context interface. 
+    # An engine can have multiple execution contexts, allowing one set 
+    # of weights to be used for multiple overlapping inference tasks.
+    context = engine.create_execution_context()  
 
-    context = engine.create_execution_context()
     # Transfer image to device and do inference
     cuda.memcpy_htod(d_input, image_tensor.cpu().numpy())
+    # Other option: context.set_tensor_address(name, ptr)
+    # This approach allows more direct control over how and where the memory is 
+    # allocated and where TensorRT looks for the input and output tensors.
+
+    # v2: Memory is in use until execute_v2() returns 
     context.execute_v2(bindings=bindings)
+    # Other option: context.execute_async_v3(stream_handle: int) -> bool  
+    # stream_handle – The cuda stream on which the inference kernels will 
+    # be enqueued. Using default stream may lead to performance issues due 
+    # to additional cudaDeviceSynchronize() calls by TensorRT to ensure correct 
+    # synchronizations. Please use non-default stream instead.
+    # v3: Memory is in use until network is done executing 
+    # -> likely better for smaller/faster models -> more throughput
 
     # Copy output back to host
     output_data = np.empty(trt.volume(engine.get_binding_shape(engine.get_binding_index('output'))), dtype=np.float32)
