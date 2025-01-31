@@ -1,5 +1,8 @@
 # CANDERAS -**C**NN-based **An**omaly **D**etection on **Ra**il Track **S**ystems on the Edge
 
+![Thomas_v2](https://github.com/user-attachments/assets/fdea44fa-1c8f-416b-88ed-c23c1b41674c)
+
+
 is maintained by Fabian Seiler, Karel Rusy, Hakim Tayari
 
 ## General Info
