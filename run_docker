@@ -1,1 +1,1 @@
-docker run -it --rm --network host --runtime nvidia -v /home/cdleml/canderas/:/home/canderas nvcr.io/nvidia/l4t-ml:r32.7.1-py3
+docker run -it --rm --network host --runtime nvidia -v /home/cdleml/soc_lab_WS2024/canderas/:/home/soc_lab_WS2024/canderas nvcr.io/nvidia/l4t-ml:r32.7.1-py3

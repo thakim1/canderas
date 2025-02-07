@@ -48,21 +48,22 @@ def convert_onnx_to_tensorrt(onnx_model_path, trt_model_path):
     # Save the TensorRT engine to .trt file
     engine = builder.build_engine(network, builder.create_builder_config())
     with open(trt_model_path + ".trt", 'wb') as trt_model:
-        print("Creating default prec model...")
+        print("Creating default prec (FP32)  model...")
         trt_model.write(engine.serialize())
     print(f"TensorRT model saved to {trt_model_path}.trt")
 
-    # For INT8
-    config_int8 = builder.create_builder_config()
-    config_int8.set_flag(trt.BuilderFlag.INT8)
+    # For INT8, commented because whole dataset is needed for calibration 
+    # and not available on jetson
+    #config_int8 = builder.create_builder_config()
+    #config_int8.set_flag(trt.BuilderFlag.INT8)
     # Enable INT8 calibration if needed
     # config_int8.int8_calibrator = my_calibrator # Implement a calibrator if needed
-    engine_int8 = builder.build_engine(network, config_int8)
-    if engine_int8: # Needs Calibrator to work, missing atm
-        print("Creating INT8 prec model...")
-        with open(trt_model_path+"INT8.trt", 'wb') as trt_model:
-            trt_model.write(engine_int8.serialize())
-        print(f"TensorRT model saved to {trt_model_path}INT8.trt")
+    #engine_int8 = builder.build_engine(network, config_int8)
+    #if engine_int8: # Needs Calibrator to work, missing atm
+    #    print("Creating INT8 prec model...")
+    #    with open(trt_model_path+"INT8.trt", 'wb') as trt_model:
+    #        trt_model.write(engine_int8.serialize())
+    #    print(f"TensorRT model saved to {trt_model_path}INT8.trt")
 
     # For FP16
     config_fp16 = builder.create_builder_config()
