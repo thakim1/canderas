@@ -68,6 +68,8 @@ If the container has not been given a distinct name in docker run command it wil
 `docker build -t <image_name> .`
 
 ### Dev Links
+- HOW TO DLA: [https://github.com/NVIDIA-AI-IOT/jetson_dla_tutorial?tab=readme-ov-file#step-5](https://github.com/NVIDIA-AI-IOT/jetson_dla_tutorial)
+- HOW TO DLA SW: https://github.com/NVIDIA/Deep-Learning-Accelerator-SW
 - DustyNV - Jetson Intefernce Tutorial: https://github.com/dusty-nv/jetson-inference/tree/master
 - Blog Post on TensorRT: https://vilsonrodrigues.medium.com/a-friendly-introduction-to-tensorrt-building-engines-de8ae0b74038
 - General TensorRT Repo by NVIDIA: https://github.com/NVIDIA/TensorRT
