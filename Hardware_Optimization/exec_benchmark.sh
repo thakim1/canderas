@@ -13,7 +13,7 @@ for model in "${models[@]}"; do
     for pr in "${prune[@]}"; do
         for prec in "${precision[@]}"; do
             # Construct the full model name
-            full_model="${model}${pr}${prec}"
+            full_model="${model}${pr}${prec}.trt"
             
             # Print which combination is being run (for clarity in the log)
             echo "Running inference for model: $full_model"
