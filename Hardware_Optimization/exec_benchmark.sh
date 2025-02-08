@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 # Define models, prune options, and precision options
-models=('DenseNet' 'MobileNetV2' 'MobileNetV3' 'MobileNetV3_Large' 'ResNet18')
+models=('DenseNet' 'DenseNet' 'MobileNetV2' 'MobileNetV3' 'MobileNetV3_Large' 'ResNet18')
 prune=('' '_P40' '_P70')
 precision=('' '_FP16')  # You can also add '_INT8' if required
 
