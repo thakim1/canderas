@@ -20,7 +20,9 @@ if __name__ == '__main__':
     clear_bug = True
 
     trained_models = ['DenseNet', 'DenseNet', 'MobileNetV2', 'MobileNetV3', 'MobileNetV3_Large', 'ResNet18']
-    precision = ['', 'INT8', 'FP16']
+    prune = ['','_P40', '_P70']
+    precision = ['', '_FP16'] #, 'INT8']
+
 
     # Initialize the CUDA context manually
     cuda.init()
@@ -39,49 +41,49 @@ if __name__ == '__main__':
 
     # Standard TensoRT model, default config
     for model_name in trained_models:
-        for p in precision:
-            print(f"-------------{model_name + ' ' + p}-------------")
+        for pru in prune:
+            for prec in precision:
+                print(f"-------------{model_name + pru  + prec}-------------")
 
-            # Load model as TensoRT engine
-            trt_model_path = model_name + p + ".trt"
-            print(f"Check if file {trt_model_path} exists...")
-            if not os.path.exists(trt_model_path):
-                print(f"Model not found... trying next precision.")
-                continue
+                # Load model as TensoRT engine
+                trt_model_path = model_name + pru + prec + '.trt'
+                print(f"Check if file {trt_model_path} exists...")
+                if not os.path.exists(trt_model_path):
+                    print(f"Model not found... trying next precision.")
+                    continue
 
-            # Load TensoRT engine
-            print(f"Found... loading TensorRT engine {model_name + p + '.trt'}")
-            trt_logger = trt.Logger(trt.Logger.WARNING)
-            trt_engine = load_trt_engine(trt_logger, trt_model_path)
+                # Load TensoRT engine
+                print(f"Found... loading TensorRT engine {model_name + pru + prec + '.trt'}")
+                trt_logger = trt.Logger(trt.Logger.WARNING)
+                trt_engine = load_trt_engine(trt_logger, trt_model_path)
 
-            # Load Images
-            print("Loading test images...")
-            images = load_test_images(img_folder)
+                # Load Images
+                print("Loading test images...")
+                images = load_test_images(img_folder)
 
-            # Allocate memory w/ CUDA      
-            print("Allocating GPU memory...")
-            d_input, d_output, bindings = allocate_buffers(trt_engine)
+                # Allocate memory w/ CUDA      
+                print("Allocating GPU memory...")
+                d_input, d_output, bindings = allocate_buffers(trt_engine)
 
-            inference_time = 0
+                total_inf_time = 0
+                iterations = 5
+                for _ in range(iterations):
+                    for i, image in enumerate(images):
+                        anom = image["anomaly"]
+                        img = image["image"]
+                        filename = image["file-name"]
+                        print(f"img-{i}: {filename}")
 
-            # Evaluate Images
-            for i, image in enumerate(images):
-                anom = image["anomaly"]
-                img = image["image"]
-                filename = image["file-name"]
+                        # Move img to GPU and do inference:
+                        image_in = img.unsqueeze(0).to(device)
+                        t_start = time.time()
+                        inference = perform_inference(trt_engine, d_input, d_output, bindings, image_in)
+                        t_stop = time.time()
+                        total_inf_time = total_inf_time + (t_stop-t_start)
 
-                # Move img to GPU and do inference:
-                image_in = img.unsqueeze(0).to(device)
-                t_start = time.time()
-                inference = perform_inference(trt_engine, d_input, d_output, bindings, image_in)
-                t_stop = time.time()
-                inference_time = inference_time + (t_stop-t_start)
-                # print(f"Found anomaly with {inference[0]*100}%")  
-
-            avg_inf_t = inference_time/len(images)
-            print(f"Avg. inference speed of {model_name+' '+p}: {1e3*avg_inf_t:.6f}ms -> {1/avg_inf_t} FPS.")
-            inference_time = 0
-        
+                avg_inf_t = total_inf_time/(iterations*len(images))
+                print(f"Avg. inference speed of {model_name+' '+pru+' '+prec}: {1e3*avg_inf_t:.6f}ms -> {1/avg_inf_t} FPS.")
+            
         if clear_bug:
             os.system('clear')
             clear_bug = False
