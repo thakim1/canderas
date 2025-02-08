@@ -16,6 +16,7 @@ import torch.nn as nn
 import torch.utils
 from helper_functions import load_test_images, load_trt_engine
 from helper_functions import allocate_buffers, perform_inference
+import subprocess
 
 def convert_onnx_to_tensorrt(onnx_model_path, trt_model_path):
     """
@@ -202,6 +203,14 @@ if __name__ == '__main__':
             # Convert to .trt:
             # Creates default (FP32) and FP16 precision TRT models
             convert_onnx_to_tensorrt(onnx_output_path, model_name+pru)
+
+            print(f"Deleting {onnx_output_path} to save space...")
+            try:
+                subprocess.run("rm -f *.onnx", shell=True, check=True)
+            except subprocess.CalledProcessError as e:
+                print(f"Error occurred while deleting .onnx files: {e}")
+
+
 
     ####### Test inference on converted models #######
     for model_name in trained_models:

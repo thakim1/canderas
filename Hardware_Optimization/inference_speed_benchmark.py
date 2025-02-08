@@ -72,7 +72,7 @@ if __name__ == '__main__':
                         anom = image["anomaly"]
                         img = image["image"]
                         filename = image["file-name"]
-                        print(f"img-{i}: {filename}")
+                        # print(f"img-{i}: {filename}")
 
                         # Move img to GPU and do inference:
                         image_in = img.unsqueeze(0).to(device)
@@ -82,7 +82,7 @@ if __name__ == '__main__':
                         total_inf_time = total_inf_time + (t_stop-t_start)
 
                 avg_inf_t = total_inf_time/(iterations*len(images))
-                print(f"Avg. inference speed of {model_name+' '+pru+' '+prec}: {1e3*avg_inf_t:.6f}ms -> {1/avg_inf_t} FPS.")
+                print(f"{model_name+pru+prec} t_inf: {1e3*avg_inf_t:.6f}ms => {1/avg_inf_t} FPS.")
             
         if clear_bug:
             os.system('clear')
