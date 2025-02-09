@@ -1,0 +1,577 @@
+root@xavier:/home/canderas/Hardware_Optimization# python3 test.py 
+-------------DenseNetGLR0-------------
+Using CUDA.
+Model exported to ONNX at DenseNetGLR0.onnx
+TensorRT model saved to DenseNetGLR0.trt
+Loading TensorRT engine.
+[12/04/2024-14:04:51] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/04/2024-14:04:51] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3183, GPU 14510 (MiB)
+[12/04/2024-14:04:51] [TRT] [I] Loaded engine size: 32 MiB
+[12/04/2024-14:04:51] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3184, GPU 14510 (MiB)
+[12/04/2024-14:04:51] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3185, GPU 14510 (MiB)
+[12/04/2024-14:04:51] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +31, now: CPU 0, GPU 31 (MiB)
+Loading test images.
+Allocating GPU memory.
+Start inference for image  0 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3159, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3159, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 0/9: [0.48775017]
+Start inference for image  1 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3159, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3159, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 1/9: [0.50926125]
+Start inference for image  2 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3159, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3159, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 2/9: [0.42376596]
+Start inference for image  3 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 3/9: [0.46383908]
+Start inference for image  4 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 4/9: [0.35714537]
+Start inference for image  5 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 5/9: [0.23415539]
+Start inference for image  6 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 6/9: [0.3437515]
+Start inference for image  7 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 7/9: [0.35497564]
+Start inference for image  8 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 8/9: [0.37169412]
+Start inference for image  9 / 9
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3160, GPU 14480 (MiB)
+[12/04/2024-14:04:54] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 9/9: [0.2672013]
+-------------DenseNetGLR01-------------
+Using CUDA.
+Model exported to ONNX at DenseNetGLR01.onnx
+TensorRT model saved to DenseNetGLR01.trt
+Loading TensorRT engine.
+[12/04/2024-14:05:48] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/04/2024-14:05:48] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3220, GPU 14624 (MiB)
+[12/04/2024-14:05:48] [TRT] [I] Loaded engine size: 32 MiB
+[12/04/2024-14:05:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3222, GPU 14624 (MiB)
+[12/04/2024-14:05:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3222, GPU 14624 (MiB)
+[12/04/2024-14:05:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +31, now: CPU 0, GPU 62 (MiB)
+Loading test images.
+Allocating GPU memory.
+Start inference for image  0 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 0/9: [0.64027596]
+Start inference for image  1 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 1/9: [0.68624854]
+Start inference for image  2 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 2/9: [0.6560849]
+Start inference for image  3 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 3/9: [0.58803725]
+Start inference for image  4 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 4/9: [0.63058424]
+Start inference for image  5 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 5/9: [0.26317263]
+Start inference for image  6 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 6/9: [0.7367404]
+Start inference for image  7 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14595 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 7/9: [0.5864388]
+Start inference for image  8 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14596 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14596 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 8/9: [0.460447]
+Start inference for image  9 / 9
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3188, GPU 14597 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3189, GPU 14597 (MiB)
+[12/04/2024-14:05:52] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
+Output for image 9/9: [0.5011041]
+-------------MobileNetV2GLR0-------------
+Using CUDA.
+Model exported to ONNX at MobileNetV2GLR0.onnx
+TensorRT model saved to MobileNetV2GLR0.trt
+Loading TensorRT engine.
+[12/04/2024-14:06:11] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/04/2024-14:06:11] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3214, GPU 14628 (MiB)
+[12/04/2024-14:06:11] [TRT] [I] Loaded engine size: 9 MiB
+[12/04/2024-14:06:11] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3214, GPU 14628 (MiB)
+[12/04/2024-14:06:11] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3215, GPU 14628 (MiB)
+[12/04/2024-14:06:11] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +9, now: CPU 0, GPU 40 (MiB)
+Loading test images.
+Allocating GPU memory.
+Start inference for image  0 / 9
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14615 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14615 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 0/9: [0.16516787]
+Start inference for image  1 / 9
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 1/9: [0.28879458]
+Start inference for image  2 / 9
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 2/9: [0.06153348]
+Start inference for image  3 / 9
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 3/9: [0.08090061]
+Start inference for image  4 / 9
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 4/9: [0.0755994]
+Start inference for image  5 / 9
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 5/9: [0.05646685]
+Start inference for image  6 / 9
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 6/9: [0.08343631]
+Start inference for image  7 / 9
+[12/04/2024-14:06:14] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:15] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:15] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 7/9: [0.07401428]
+Start inference for image  8 / 9
+[12/04/2024-14:06:15] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:15] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:15] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 8/9: [0.10969329]
+Start inference for image  9 / 9
+[12/04/2024-14:06:15] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:15] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3198, GPU 14614 (MiB)
+[12/04/2024-14:06:15] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 9/9: [0.06872737]
+-------------MobileNetV2GLR01-------------
+Using CUDA.
+Model exported to ONNX at MobileNetV2GLR01.onnx
+TensorRT model saved to MobileNetV2GLR01.trt
+Loading TensorRT engine.
+[12/04/2024-14:06:33] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/04/2024-14:06:33] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3221, GPU 14645 (MiB)
+[12/04/2024-14:06:33] [TRT] [I] Loaded engine size: 9 MiB
+[12/04/2024-14:06:33] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3221, GPU 14645 (MiB)
+[12/04/2024-14:06:33] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3222, GPU 14645 (MiB)
+[12/04/2024-14:06:33] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +9, now: CPU 0, GPU 17 (MiB)
+Loading test images.
+Allocating GPU memory.
+Start inference for image  0 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14633 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14633 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 0/9: [0.50593966]
+Start inference for image  1 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 1/9: [0.5365124]
+Start inference for image  2 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 2/9: [0.56467414]
+Start inference for image  3 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 3/9: [0.60245]
+Start inference for image  4 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 4/9: [0.4746315]
+Start inference for image  5 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 5/9: [0.2883168]
+Start inference for image  6 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 6/9: [0.5054139]
+Start inference for image  7 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 7/9: [0.5288481]
+Start inference for image  8 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 8/9: [0.48513404]
+Start inference for image  9 / 9
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3205, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3206, GPU 14632 (MiB)
+[12/04/2024-14:06:37] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
+Output for image 9/9: [0.17754465]
+-------------MobileNetV3_LargeGLR01-------------
+Using CUDA.
+Model exported to ONNX at MobileNetV3_LargeGLR01.onnx
+TensorRT model saved to MobileNetV3_LargeGLR01.trt
+Loading TensorRT engine.
+[12/04/2024-14:08:02] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/04/2024-14:08:02] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3254, GPU 14718 (MiB)
+[12/04/2024-14:08:02] [TRT] [I] Loaded engine size: 17 MiB
+[12/04/2024-14:08:02] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +1, GPU +0, now: CPU 3258, GPU 14718 (MiB)
+[12/04/2024-14:08:02] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3258, GPU 14718 (MiB)
+[12/04/2024-14:08:02] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +17, now: CPU 0, GPU 25 (MiB)
+Loading test images.
+Allocating GPU memory.
+Start inference for image  0 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 0/9: [0.24339649]
+Start inference for image  1 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 1/9: [0.61849755]
+Start inference for image  2 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 2/9: [0.5193772]
+Start inference for image  3 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 3/9: [0.45223278]
+Start inference for image  4 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 4/9: [0.37544966]
+Start inference for image  5 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 5/9: [0.28814167]
+Start inference for image  6 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 6/9: [0.43239623]
+Start inference for image  7 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 7/9: [0.5926908]
+Start inference for image  8 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 8/9: [0.40438306]
+Start inference for image  9 / 9
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3227, GPU 14691 (MiB)
+[12/04/2024-14:08:05] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
+Output for image 9/9: [0.39250988]
+-------------MobileNetV3GLR0-------------
+Using CUDA.
+Model exported to ONNX at MobileNetV3GLR0.onnx
+TensorRT model saved to MobileNetV3GLR0.trt
+Loading TensorRT engine.
+[12/04/2024-14:08:23] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/04/2024-14:08:23] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3249, GPU 14714 (MiB)
+[12/04/2024-14:08:23] [TRT] [I] Loaded engine size: 6 MiB
+[12/04/2024-14:08:23] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3252, GPU 14714 (MiB)
+[12/04/2024-14:08:23] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3253, GPU 14714 (MiB)
+[12/04/2024-14:08:23] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +6, now: CPU 0, GPU 22 (MiB)
+Loading test images.
+Allocating GPU memory.
+Start inference for image  0 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 0/9: [0.4775626]
+Start inference for image  1 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 1/9: [0.44947448]
+Start inference for image  2 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 2/9: [0.62841994]
+Start inference for image  3 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 3/9: [0.4722186]
+Start inference for image  4 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 4/9: [0.44069725]
+Start inference for image  5 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 5/9: [0.522048]
+Start inference for image  6 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 6/9: [0.53335273]
+Start inference for image  7 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 7/9: [0.46479818]
+Start inference for image  8 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 8/9: [0.53708124]
+Start inference for image  9 / 9
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3233, GPU 14705 (MiB)
+[12/04/2024-14:08:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 9/9: [0.43353397]
+-------------MobileNetV3GLR01-------------
+Using CUDA.
+Model exported to ONNX at MobileNetV3GLR01.onnx
+TensorRT model saved to MobileNetV3GLR01.trt
+Loading TensorRT engine.
+[12/04/2024-14:08:45] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/04/2024-14:08:45] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3249, GPU 14725 (MiB)
+[12/04/2024-14:08:45] [TRT] [I] Loaded engine size: 6 MiB
+[12/04/2024-14:08:45] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3252, GPU 14725 (MiB)
+[12/04/2024-14:08:45] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3252, GPU 14725 (MiB)
+[12/04/2024-14:08:45] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +6, now: CPU 0, GPU 11 (MiB)
+Loading test images.
+Allocating GPU memory.
+Start inference for image  0 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 0/9: [0.35979223]
+Start inference for image  1 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 1/9: [0.37461]
+Start inference for image  2 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 2/9: [0.48026913]
+Start inference for image  3 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 3/9: [0.368577]
+Start inference for image  4 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 4/9: [0.33656484]
+Start inference for image  5 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 5/9: [0.46682423]
+Start inference for image  6 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 6/9: [0.41041297]
+Start inference for image  7 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 7/9: [0.3393604]
+Start inference for image  8 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 8/9: [0.41213277]
+Start inference for image  9 / 9
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3239, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +1, GPU +0, now: CPU 3240, GPU 14720 (MiB)
+[12/04/2024-14:08:48] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
+Output for image 9/9: [0.32210544]
+-------------ResNet18GLR0-------------
+Using CUDA.
+Model exported to ONNX at ResNet18GLR0.onnx
+TensorRT model saved to ResNet18GLR0.trt
+Loading TensorRT engine.
+[12/04/2024-14:08:57] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/04/2024-14:08:57] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3382, GPU 14993 (MiB)
+[12/04/2024-14:08:57] [TRT] [I] Loaded engine size: 90 MiB
+[12/04/2024-14:08:57] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3382, GPU 14993 (MiB)
+[12/04/2024-14:08:57] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3382, GPU 14993 (MiB)
+[12/04/2024-14:08:57] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +91, now: CPU 0, GPU 96 (MiB)
+Loading test images.
+Allocating GPU memory.
+Start inference for image  0 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14850 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14850 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 0/9: [0.9495611]
+Start inference for image  1 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 1/9: [0.8315376]
+Start inference for image  2 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 2/9: [0.8772733]
+Start inference for image  3 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 3/9: [0.9760599]
+Start inference for image  4 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 4/9: [0.87246126]
+Start inference for image  5 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 5/9: [0.26085642]
+Start inference for image  6 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 6/9: [0.76003313]
+Start inference for image  7 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 7/9: [0.91524047]
+Start inference for image  8 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14853 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 8/9: [0.67930734]
+Start inference for image  9 / 9
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3279, GPU 14854 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3279, GPU 14854 (MiB)
+[12/04/2024-14:09:00] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 9/9: [0.44924176]
+-------------ResNet18GLR01-------------
+Using CUDA.
+Model exported to ONNX at ResNet18GLR01.onnx
+TensorRT model saved to ResNet18GLR01.trt
+Loading TensorRT engine.
+[12/04/2024-14:09:09] [TRT] [I] The logger passed into createInferRuntime differs from one already provided for an existing builder, runtime, or refitter. Uses of the global logger, returned by nvinfer1::getLogger(), will return the existing value.
+
+[12/04/2024-14:09:09] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3422, GPU 15186 (MiB)
+[12/04/2024-14:09:09] [TRT] [I] Loaded engine size: 90 MiB
+[12/04/2024-14:09:09] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3422, GPU 15187 (MiB)
+[12/04/2024-14:09:09] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3422, GPU 15187 (MiB)
+[12/04/2024-14:09:09] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in engine deserialization: CPU +0, GPU +91, now: CPU 0, GPU 181 (MiB)
+Loading test images.
+Allocating GPU memory.
+Start inference for image  0 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14793 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14793 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 0/9: [0.00871316]
+Start inference for image  1 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14793 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14793 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 1/9: [0.08720762]
+Start inference for image  2 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14803 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14803 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 2/9: [0.2172249]
+Start inference for image  3 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14803 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14803 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 3/9: [0.02579051]
+Start inference for image  4 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 4/9: [0.03672186]
+Start inference for image  5 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 5/9: [0.00161898]
+Start inference for image  6 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 6/9: [0.12593806]
+Start inference for image  7 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 7/9: [0.10072035]
+Start inference for image  8 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 8/9: [0.00798094]
+Start inference for image  9 / 9
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuBLAS/cuBLASLt: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] Init cuDNN: CPU +0, GPU +0, now: CPU 3322, GPU 14804 (MiB)
+[12/04/2024-14:09:13] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
+Output for image 9/9: [0.00132459]
