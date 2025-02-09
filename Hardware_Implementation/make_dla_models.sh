@@ -20,27 +20,14 @@ for model in "${models[@]}"; do
     # FP32 Quantization
     for prune in "${pruning[@]}"; do
             model_name = "${model}${prune}_dla0"
-
             trtexec --onnx="$model_name".onnx --useDLACore=0 --saveEngine="$model_name".trt
-
-            # Print which combination is being run (for clarity in the log)
-            # echo "Running inference for model: $full_model"
-            # Run the inference_speed.py script and append the output to benchmark_capture.dat
-            # python3 model_inference.py --model "$full_model" >> benchmark_capture.dat
     done
-    
     # FP16 Quantization 
     for prune in "${pruning[@]}"; do
             model_name = "${model}${prune}"
             # Construct the full model name
             full_model_name = "${model}${prune}_FP16_dla0"
-            
             trtexec --onnx="$model_name".onnx --fp16 --useDLACore=0 --saveEngine="$full_model_name".trt
-
-            # Print which combination is being run (for clarity in the log)
-            # echo "Running inference for model: $full_model"
-            # Run the inference_speed.py script and append the output to benchmark_capture.dat
-            # python3 model_inference.py --model "$full_model" >> benchmark_capture.dat
     done
 done
 
