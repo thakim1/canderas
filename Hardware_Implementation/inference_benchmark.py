@@ -43,26 +43,26 @@ if __name__ == '__main__':
     for model_name in trained_models:
         for pru in prune:
             for prec in precision:
-                print(f"-------------{model_name + pru  + prec}-------------")
+                #print(f"-------------{model_name + pru  + prec}-------------")
 
                 # Load model as TensoRT engine
                 trt_model_path = model_name + pru + prec + '.trt'
-                print(f"Check if file {trt_model_path} exists...")
+                #print(f"Check if file {trt_model_path} exists...")
                 if not os.path.exists(trt_model_path):
                     print(f"Model not found... trying next precision.")
                     continue
 
                 # Load TensoRT engine
-                print(f"Found... loading TensorRT engine {model_name + pru + prec + '.trt'}")
-                trt_logger = trt.Logger(trt.Logger.WARNING)
+                #print(f"Found... loading TensorRT engine {model_name + pru + prec + '.trt'}")
+                trt_logger = trt.Logger(trt.Logger.VERBOSE)
                 trt_engine = load_trt_engine(trt_logger, trt_model_path)
 
                 # Load Images
-                print("Loading test images...")
+                #print("Loading test images...")
                 images = load_test_images(img_folder)
 
                 # Allocate memory w/ CUDA      
-                print("Allocating GPU memory...")
+                #print("Allocating GPU memory...")
                 d_input, d_output, bindings = allocate_buffers(trt_engine)
 
                 total_inf_time = 0
