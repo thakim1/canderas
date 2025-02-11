@@ -178,13 +178,15 @@ if __name__ == '__main__':
     for model_name in trained_models:
         # Load Model
         for pru in prune:
-            print(f" ###### {model_name + pru} ###### ")
+            print(f"######{model_name + pru}######")
             model = get_model(model_name, pru)
 
             device = "cpu"  # Initially set to CPU
             if torch.cuda.is_available():
                 device = "cuda"  # Use CUDA if available
-                print("Using CUDA.")
+            else:
+                print("Not using CUDA...")
+
             model.to(device)
             model.eval()
 
@@ -220,7 +222,7 @@ if __name__ == '__main__':
     for model_name in trained_models:
         for pru in prune:
             for prec in precision:
-                print(f" ###### {model_name + pru +  prec} ###### ")
+                print(f"######{model_name + pru +  prec}###### ")
 
                 # Export to tensorRT format
                 trt_model_path = model_name + pru + prec + '.trt'
@@ -244,7 +246,7 @@ if __name__ == '__main__':
                     image_in = img.unsqueeze(0).to(device)
                     try:
                         inference = perform_inference(trt_engine, d_input, d_output, bindings, image_in)
-                        print("Performing infernece... OK!", end='\r')
+                        print(f"Performing infernece {i}/{len(images)}... OK!", end='\r')
                     except:
                         print("Error peforming inference, printing details... ", str(e))
                         traceback.print_exc()

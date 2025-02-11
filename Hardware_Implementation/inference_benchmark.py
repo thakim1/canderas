@@ -56,7 +56,7 @@ if __name__ == '__main__':
 
 
                 with open(log_file, 'a') as lf:
-                    lf.write(f" ###### {model_name + pru  + prec} ###### \n")
+                    lf.write(f"######{model_name + pru  + prec}######\n")
 
                 trt_engine = load_trt_engine(trt_logger, trt_model_path)
                 images = load_test_images(img_folder)
