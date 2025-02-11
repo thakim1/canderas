@@ -201,16 +201,16 @@ if __name__ == '__main__':
                 input_names=["input"], 
                 output_names=["output"]
             )
-            print(f"Model exported to ONNX at {onnx_output_path}.onnx")
+            print(f"Model exported to ONNX at {onnx_output_path}")
 
             # Convert to .trt:
             # Creates default (FP32) and FP16 precision TRT models
             convert_onnx_to_tensorrt(onnx_output_path, model_name+pru)
 
             # Comment if .onnx needed
-            print(f"Deleting {onnx_output_path}.onnx to save space...")
+            print(f"Deleting {onnx_output_path} to save space...")
             try:
-                cmd = f"rm -f {onnx_output_path}.onnx"
+                cmd = f"rm -f {onnx_output_path}"
                 subprocess.run(cmd, shell=True, check=True)
             except subprocess.CalledProcessError as e:
                 print(f"Error occurred while deleting .onnx files: {e}")
