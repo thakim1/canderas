@@ -17,6 +17,7 @@ import torch.utils
 from helper_functions import load_test_images, load_trt_engine
 from helper_functions import allocate_buffers, perform_inference
 import subprocess
+import traceback
 
 def convert_onnx_to_tensorrt(onnx_model_path, trt_model_path):
     """
@@ -177,7 +178,7 @@ if __name__ == '__main__':
     for model_name in trained_models:
         # Load Model
         for pru in prune:
-            print(f"-------------{model_name + pru}-------------")
+            print(f" ###### {model_name + pru} ###### ")
             model = get_model(model_name, pru)
 
             device = "cpu"  # Initially set to CPU
@@ -198,46 +199,39 @@ if __name__ == '__main__':
                 input_names=["input"], 
                 output_names=["output"]
             )
-            print(f"Model exported to ONNX at {onnx_output_path}")
+            print(f"Model exported to ONNX at {onnx_output_path}.onnx")
 
             # Convert to .trt:
             # Creates default (FP32) and FP16 precision TRT models
             convert_onnx_to_tensorrt(onnx_output_path, model_name+pru)
 
-            # Uncomment to save space, .onnx models necesarry for 
-            # DLA acceleration script 'make_dla_models.sh' 
-            # print(f"Deleting {onnx_output_path} to save space...")
-            # try:
-            #    subprocess.run("rm -f *.onnx", shell=True, check=True)
-            # except subprocess.CalledProcessError as e:
-            #    print(f"Error occurred while deleting .onnx files: {e}")
+            # Comment if .onnx needed
+            print(f"Deleting {onnx_output_path}.onnx to save space...")
+            try:
+                cmd = f"rm -f {onnx_output_path}.onnx"
+                subprocess.run(cmd, shell=True, check=True)
+            except subprocess.CalledProcessError as e:
+                print(f"Error occurred while deleting .onnx files: {e}")
 
 
+    trt_logger = trt.Logger(trt.Logger.WARNING)
 
     ####### Test inference on converted models #######
     for model_name in trained_models:
         for pru in prune:
             for prec in precision:
-                print(f"-------------{model_name + pru +  prec}-------------")
+                print(f" ###### {model_name + pru +  prec} ###### ")
 
                 # Export to tensorRT format
                 trt_model_path = model_name + pru + prec + '.trt'
-                print(f"Check if file {trt_model_path} exists...")
+                print(f"Checking {trt_model_path}.trt...")
                 if not os.path.exists(trt_model_path):
                     print(f"Model not found... trying next.")
                     continue
 
-                # Load TensoRT engine
-                print(f"Found... loading TensorRT engine {model_name + pru + prec + '.trt'}")
-                trt_logger = trt.Logger(trt.Logger.WARNING)
+                # Load TensoRT engine, load img, allocate memory
                 trt_engine = load_trt_engine(trt_logger, trt_model_path)
-
-                # Load Images
-                print("Loading test images...")
                 images = load_test_images(img_folder)
-
-                # Allocate memory w/ CUDA      
-                print("Allocating GPU memory...")
                 d_input, d_output, bindings = allocate_buffers(trt_engine)
 
                 # Evaluate Images
@@ -248,9 +242,12 @@ if __name__ == '__main__':
 
                     # Move img to GPU and do inference:
                     image_in = img.unsqueeze(0).to(device)
-                    print("Inference ", filename, ":", i ,"/",len(images)-1, ", has anomaly y/n : 1/0 ", anom)
-                    inference = perform_inference(trt_engine, d_input, d_output, bindings, image_in)
-
-                    # Print results
-                    print(f"Found anomaly with {inference[0]*100:.3f}%")  
+                    try:
+                        inference = perform_inference(trt_engine, d_input, d_output, bindings, image_in)
+                        print("Performing infernece... OK!", end='\r')
+                    except:
+                        print("Error peforming inference, printing details... ", str(e))
+                        traceback.print_exc()
+                    # print("Inference ", filename, ":", i ,"/",len(images)-1, ", has anomaly y/n : 1/0 ", anom)
+                    # print(f"Found anomaly with {inference[0]*100:.3f}%")  
 
