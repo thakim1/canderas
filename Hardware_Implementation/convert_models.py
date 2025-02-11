@@ -226,7 +226,7 @@ if __name__ == '__main__':
 
                 # Export to tensorRT format
                 trt_model_path = model_name + pru + prec + '.trt'
-                print(f"Checking {trt_model_path}.trt...")
+                print(f"Checking {trt_model_path}...")
                 if not os.path.exists(trt_model_path):
                     print(f"Model not found... trying next.")
                     continue
