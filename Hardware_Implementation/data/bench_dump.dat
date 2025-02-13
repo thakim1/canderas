@@ -1,4 +1,4 @@
- ###### DenseNet ###### 
+######DenseNet######
 [02/11/2025-11:09:17] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3492, GPU 14663 (MiB)
 [02/11/2025-11:09:17] [TRT] [I] Loaded engine size: 32 MiB
 [02/11/2025-11:09:17] [TRT] [V] Using cublas as a tactic source
@@ -408,7 +408,7 @@
 [02/11/2025-11:09:22] [TRT] [V] Allocated activation device memory of size 10035200
 [02/11/2025-11:09:22] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
 DenseNet : 27.581096ms => 36.25671768229696FPS 
- ###### DenseNet_FP16 ###### 
+######DenseNet_FP16######
 [02/11/2025-11:09:22] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3473, GPU 14655 (MiB)
 [02/11/2025-11:09:22] [TRT] [I] Loaded engine size: 15 MiB
 [02/11/2025-11:09:22] [TRT] [V] Using cublas as a tactic source
@@ -818,7 +818,7 @@ DenseNet : 27.581096ms => 36.25671768229696FPS
 [02/11/2025-11:09:27] [TRT] [V] Allocated activation device memory of size 5017600
 [02/11/2025-11:09:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 31 (MiB)
 DenseNet_FP16 : 26.485949ms => 37.755868838741016FPS 
- ###### DenseNet_P40 ###### 
+######DenseNet_P40######
 [02/11/2025-11:09:27] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3492, GPU 14653 (MiB)
 [02/11/2025-11:09:27] [TRT] [I] Loaded engine size: 32 MiB
 [02/11/2025-11:09:27] [TRT] [V] Using cublas as a tactic source
@@ -1228,7 +1228,7 @@ DenseNet_FP16 : 26.485949ms => 37.755868838741016FPS
 [02/11/2025-11:09:32] [TRT] [V] Allocated activation device memory of size 10035200
 [02/11/2025-11:09:32] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
 DenseNet_P40 : 27.553959ms => 36.29242548737697FPS 
- ###### DenseNet_P40_FP16 ###### 
+######DenseNet_P40_FP16######
 [02/11/2025-11:09:32] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3473, GPU 14654 (MiB)
 [02/11/2025-11:09:32] [TRT] [I] Loaded engine size: 15 MiB
 [02/11/2025-11:09:32] [TRT] [V] Using cublas as a tactic source
@@ -1638,7 +1638,7 @@ DenseNet_P40 : 27.553959ms => 36.29242548737697FPS
 [02/11/2025-11:09:36] [TRT] [V] Allocated activation device memory of size 5017600
 [02/11/2025-11:09:36] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 31 (MiB)
 DenseNet_P40_FP16 : 26.247511ms => 38.09885072255401FPS 
- ###### DenseNet_P70 ###### 
+######DenseNet_P70######
 [02/11/2025-11:09:36] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3493, GPU 14653 (MiB)
 [02/11/2025-11:09:36] [TRT] [I] Loaded engine size: 32 MiB
 [02/11/2025-11:09:36] [TRT] [V] Using cublas as a tactic source
@@ -2048,7 +2048,7 @@ DenseNet_P40_FP16 : 26.247511ms => 38.09885072255401FPS
 [02/11/2025-11:09:41] [TRT] [V] Allocated activation device memory of size 10035200
 [02/11/2025-11:09:41] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +22, now: CPU 0, GPU 53 (MiB)
 DenseNet_P70 : 27.376790ms => 36.52729185176464FPS 
- ###### DenseNet_P70_FP16 ###### 
+######DenseNet_P70_FP16######
 [02/11/2025-11:09:41] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3473, GPU 14655 (MiB)
 [02/11/2025-11:09:41] [TRT] [I] Loaded engine size: 15 MiB
 [02/11/2025-11:09:41] [TRT] [V] Using cublas as a tactic source
@@ -2458,7 +2458,7 @@ DenseNet_P70 : 27.376790ms => 36.52729185176464FPS
 [02/11/2025-11:09:46] [TRT] [V] Allocated activation device memory of size 5017600
 [02/11/2025-11:09:46] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 31 (MiB)
 DenseNet_P70_FP16 : 26.651216ms => 37.521740725135146FPS 
- ###### MobileNetV2 ###### 
+######MobileNetV2######
 [02/11/2025-11:09:46] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3470, GPU 14658 (MiB)
 [02/11/2025-11:09:46] [TRT] [I] Loaded engine size: 9 MiB
 [02/11/2025-11:09:46] [TRT] [V] Using cublas as a tactic source
@@ -2868,7 +2868,7 @@ DenseNet_P70_FP16 : 26.651216ms => 37.521740725135146FPS
 [02/11/2025-11:09:51] [TRT] [V] Allocated activation device memory of size 7024640
 [02/11/2025-11:09:51] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
 MobileNetV2 : 35.863743ms => 27.883313930328942FPS 
- ###### MobileNetV2_FP16 ###### 
+######MobileNetV2_FP16######
 [02/11/2025-11:09:51] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3909, GPU 15185 (MiB)
 [02/11/2025-11:09:51] [TRT] [I] Loaded engine size: 5 MiB
 [02/11/2025-11:09:51] [TRT] [V] Using cublas as a tactic source
@@ -3278,7 +3278,7 @@ MobileNetV2 : 35.863743ms => 27.883313930328942FPS
 [02/11/2025-11:09:55] [TRT] [V] Allocated activation device memory of size 3512320
 [02/11/2025-11:09:55] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 11 (MiB)
 MobileNetV2_FP16 : 10.192513ms => 98.11122676927755FPS 
- ###### MobileNetV2_P40 ###### 
+######MobileNetV2_P40######
 [02/11/2025-11:09:55] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3914, GPU 15165 (MiB)
 [02/11/2025-11:09:55] [TRT] [I] Loaded engine size: 9 MiB
 [02/11/2025-11:09:55] [TRT] [V] Using cublas as a tactic source
@@ -3688,7 +3688,7 @@ MobileNetV2_FP16 : 10.192513ms => 98.11122676927755FPS
 [02/11/2025-11:09:59] [TRT] [V] Allocated activation device memory of size 7024640
 [02/11/2025-11:09:59] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
 MobileNetV2_P40 : 11.924205ms => 83.86303443813641FPS 
- ###### MobileNetV2_P40_FP16 ###### 
+######MobileNetV2_P40_FP16######
 [02/11/2025-11:09:59] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3910, GPU 15154 (MiB)
 [02/11/2025-11:09:59] [TRT] [I] Loaded engine size: 5 MiB
 [02/11/2025-11:09:59] [TRT] [V] Using cublas as a tactic source
@@ -4098,7 +4098,7 @@ MobileNetV2_P40 : 11.924205ms => 83.86303443813641FPS
 [02/11/2025-11:10:03] [TRT] [V] Allocated activation device memory of size 3512320
 [02/11/2025-11:10:03] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 11 (MiB)
 MobileNetV2_P40_FP16 : 9.947524ms => 100.52752754240232FPS 
- ###### MobileNetV2_P70 ###### 
+######MobileNetV2_P70######
 [02/11/2025-11:10:03] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3915, GPU 15163 (MiB)
 [02/11/2025-11:10:03] [TRT] [I] Loaded engine size: 9 MiB
 [02/11/2025-11:10:03] [TRT] [V] Using cublas as a tactic source
@@ -4508,7 +4508,7 @@ MobileNetV2_P40_FP16 : 9.947524ms => 100.52752754240232FPS
 [02/11/2025-11:10:07] [TRT] [V] Allocated activation device memory of size 7024640
 [02/11/2025-11:10:07] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +12, now: CPU 0, GPU 20 (MiB)
 MobileNetV2_P70 : 11.858087ms => 84.33063738805487FPS 
- ###### MobileNetV2_P70_FP16 ###### 
+######MobileNetV2_P70_FP16######
 [02/11/2025-11:10:07] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3910, GPU 15148 (MiB)
 [02/11/2025-11:10:07] [TRT] [I] Loaded engine size: 5 MiB
 [02/11/2025-11:10:07] [TRT] [V] Using cublas as a tactic source
@@ -4918,7 +4918,7 @@ MobileNetV2_P70 : 11.858087ms => 84.33063738805487FPS
 [02/11/2025-11:10:11] [TRT] [V] Allocated activation device memory of size 3512320
 [02/11/2025-11:10:11] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 11 (MiB)
 MobileNetV2_P70_FP16 : 10.001683ms => 99.98317048111923FPS 
- ###### MobileNetV3 ###### 
+######MobileNetV3######
 [02/11/2025-11:10:11] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3912, GPU 15135 (MiB)
 [02/11/2025-11:10:11] [TRT] [I] Loaded engine size: 6 MiB
 [02/11/2025-11:10:11] [TRT] [V] Using cublas as a tactic source
@@ -5328,7 +5328,7 @@ MobileNetV2_P70_FP16 : 10.001683ms => 99.98317048111923FPS
 [02/11/2025-11:10:15] [TRT] [V] Allocated activation device memory of size 1814016
 [02/11/2025-11:10:15] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
 MobileNetV3 : 11.065598ms => 90.37017629740966FPS 
- ###### MobileNetV3_FP16 ###### 
+######MobileNetV3_FP16######
 [02/11/2025-11:10:15] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3911, GPU 15147 (MiB)
 [02/11/2025-11:10:15] [TRT] [I] Loaded engine size: 4 MiB
 [02/11/2025-11:10:15] [TRT] [V] Using cublas as a tactic source
@@ -5738,7 +5738,7 @@ MobileNetV3 : 11.065598ms => 90.37017629740966FPS
 [02/11/2025-11:10:19] [TRT] [V] Allocated activation device memory of size 907264
 [02/11/2025-11:10:19] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +4, now: CPU 0, GPU 6 (MiB)
 MobileNetV3_FP16 : 10.679655ms => 93.63598290117454FPS 
- ###### MobileNetV3_P40 ###### 
+######MobileNetV3_P40######
 [02/11/2025-11:10:19] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3915, GPU 15145 (MiB)
 [02/11/2025-11:10:19] [TRT] [I] Loaded engine size: 6 MiB
 [02/11/2025-11:10:19] [TRT] [V] Using cublas as a tactic source
@@ -6148,7 +6148,7 @@ MobileNetV3_FP16 : 10.679655ms => 93.63598290117454FPS
 [02/11/2025-11:10:23] [TRT] [V] Allocated activation device memory of size 1814016
 [02/11/2025-11:10:23] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
 MobileNetV3_P40 : 11.164355ms => 89.57077906408097FPS 
- ###### MobileNetV3_P40_FP16 ###### 
+######MobileNetV3_P40_FP16######
 [02/11/2025-11:10:23] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3911, GPU 15144 (MiB)
 [02/11/2025-11:10:23] [TRT] [I] Loaded engine size: 4 MiB
 [02/11/2025-11:10:23] [TRT] [V] Using cublas as a tactic source
@@ -6558,7 +6558,7 @@ MobileNetV3_P40 : 11.164355ms => 89.57077906408097FPS
 [02/11/2025-11:10:27] [TRT] [V] Allocated activation device memory of size 907264
 [02/11/2025-11:10:27] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +4, now: CPU 0, GPU 6 (MiB)
 MobileNetV3_P40_FP16 : 10.633488ms => 94.04252189682171FPS 
- ###### MobileNetV3_P70 ###### 
+######MobileNetV3_P70###### 
 [02/11/2025-11:10:27] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3915, GPU 15132 (MiB)
 [02/11/2025-11:10:27] [TRT] [I] Loaded engine size: 6 MiB
 [02/11/2025-11:10:27] [TRT] [V] Using cublas as a tactic source
@@ -6968,7 +6968,7 @@ MobileNetV3_P40_FP16 : 10.633488ms => 94.04252189682171FPS
 [02/11/2025-11:10:31] [TRT] [V] Allocated activation device memory of size 1814016
 [02/11/2025-11:10:31] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +7, now: CPU 0, GPU 12 (MiB)
 MobileNetV3_P70 : 11.319356ms => 88.344248835537FPS 
- ###### MobileNetV3_P70_FP16 ###### 
+######MobileNetV3_P70_FP16######
 [02/11/2025-11:10:31] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3912, GPU 15134 (MiB)
 [02/11/2025-11:10:31] [TRT] [I] Loaded engine size: 4 MiB
 [02/11/2025-11:10:31] [TRT] [V] Using cublas as a tactic source
@@ -7378,7 +7378,7 @@ MobileNetV3_P70 : 11.319356ms => 88.344248835537FPS
 [02/11/2025-11:10:35] [TRT] [V] Allocated activation device memory of size 907264
 [02/11/2025-11:10:35] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +4, now: CPU 0, GPU 6 (MiB)
 MobileNetV3_P70_FP16 : 10.623055ms => 94.1348836708238FPS 
- ###### MobileNetV3_Large ###### 
+######MobileNetV3_Large######
 [02/11/2025-11:10:35] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3926, GPU 15144 (MiB)
 [02/11/2025-11:10:35] [TRT] [I] Loaded engine size: 17 MiB
 [02/11/2025-11:10:35] [TRT] [V] Using cublas as a tactic source
@@ -7788,7 +7788,7 @@ MobileNetV3_P70_FP16 : 10.623055ms => 94.1348836708238FPS
 [02/11/2025-11:10:39] [TRT] [V] Allocated activation device memory of size 5074944
 [02/11/2025-11:10:39] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
 MobileNetV3_Large : 13.523521ms => 73.94523724228586FPS 
- ###### MobileNetV3_Large_FP16 ###### 
+######MobileNetV3_Large_FP16######
 [02/11/2025-11:10:39] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3917, GPU 15142 (MiB)
 [02/11/2025-11:10:39] [TRT] [I] Loaded engine size: 9 MiB
 [02/11/2025-11:10:39] [TRT] [V] Using cublas as a tactic source
@@ -8198,7 +8198,7 @@ MobileNetV3_Large : 13.523521ms => 73.94523724228586FPS
 [02/11/2025-11:10:43] [TRT] [V] Allocated activation device memory of size 2522112
 [02/11/2025-11:10:43] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +10, now: CPU 0, GPU 18 (MiB)
 MobileNetV3_Large_FP16 : 11.949029ms => 83.68880874003798FPS 
- ###### MobileNetV3_Large_P40 ###### 
+######MobileNetV3_Large_P40######
 [02/11/2025-11:10:43] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3927, GPU 15152 (MiB)
 [02/11/2025-11:10:43] [TRT] [I] Loaded engine size: 17 MiB
 [02/11/2025-11:10:43] [TRT] [V] Using cublas as a tactic source
@@ -8608,7 +8608,7 @@ MobileNetV3_Large_FP16 : 11.949029ms => 83.68880874003798FPS
 [02/11/2025-11:10:47] [TRT] [V] Allocated activation device memory of size 5074944
 [02/11/2025-11:10:47] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
 MobileNetV3_Large_P40 : 13.358040ms => 74.86128285161905FPS 
- ###### MobileNetV3_Large_P40_FP16 ###### 
+######MobileNetV3_Large_P40_FP16######
 [02/11/2025-11:10:47] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3917, GPU 15141 (MiB)
 [02/11/2025-11:10:47] [TRT] [I] Loaded engine size: 9 MiB
 [02/11/2025-11:10:47] [TRT] [V] Using cublas as a tactic source
@@ -9018,7 +9018,7 @@ MobileNetV3_Large_P40 : 13.358040ms => 74.86128285161905FPS
 [02/11/2025-11:10:51] [TRT] [V] Allocated activation device memory of size 2522112
 [02/11/2025-11:10:51] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +10, now: CPU 0, GPU 18 (MiB)
 MobileNetV3_Large_P40_FP16 : 11.984706ms => 83.43967772417567FPS 
- ###### MobileNetV3_Large_P70 ###### 
+######MobileNetV3_Large_P70######
 [02/11/2025-11:10:51] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3926, GPU 15150 (MiB)
 [02/11/2025-11:10:51] [TRT] [I] Loaded engine size: 17 MiB
 [02/11/2025-11:10:51] [TRT] [V] Using cublas as a tactic source
@@ -9428,7 +9428,7 @@ MobileNetV3_Large_P40_FP16 : 11.984706ms => 83.43967772417567FPS
 [02/11/2025-11:10:55] [TRT] [V] Allocated activation device memory of size 5046272
 [02/11/2025-11:10:55] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +18, now: CPU 0, GPU 34 (MiB)
 MobileNetV3_Large_P70 : 13.686352ms => 73.06549008513585FPS 
- ###### MobileNetV3_Large_P70_FP16 ###### 
+######MobileNetV3_Large_P70_FP16######
 [02/11/2025-11:10:55] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3918, GPU 15148 (MiB)
 [02/11/2025-11:10:55] [TRT] [I] Loaded engine size: 9 MiB
 [02/11/2025-11:10:55] [TRT] [V] Using cublas as a tactic source
@@ -9838,7 +9838,7 @@ MobileNetV3_Large_P70 : 13.686352ms => 73.06549008513585FPS
 [02/11/2025-11:10:59] [TRT] [V] Allocated activation device memory of size 2522112
 [02/11/2025-11:10:59] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +10, now: CPU 0, GPU 18 (MiB)
 MobileNetV3_Large_P70_FP16 : 12.140336ms => 82.3700428866624FPS 
- ###### ResNet18 ###### 
+######ResNet18######
 [02/11/2025-11:10:59] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 4001, GPU 15228 (MiB)
 [02/11/2025-11:10:59] [TRT] [I] Loaded engine size: 90 MiB
 [02/11/2025-11:10:59] [TRT] [V] Using cublas as a tactic source
@@ -10248,7 +10248,7 @@ MobileNetV3_Large_P70_FP16 : 12.140336ms => 82.3700428866624FPS
 [02/11/2025-11:11:04] [TRT] [V] Allocated activation device memory of size 4816896
 [02/11/2025-11:11:04] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
 ResNet18 : 18.784556ms => 53.23522042784612FPS 
- ###### ResNet18_FP16 ###### 
+######ResNet18_FP16######
 [02/11/2025-11:11:04] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3926, GPU 15160 (MiB)
 [02/11/2025-11:11:04] [TRT] [I] Loaded engine size: 22 MiB
 [02/11/2025-11:11:04] [TRT] [V] Using cublas as a tactic source
@@ -10658,7 +10658,7 @@ ResNet18 : 18.784556ms => 53.23522042784612FPS
 [02/11/2025-11:11:08] [TRT] [V] Allocated activation device memory of size 2408448
 [02/11/2025-11:11:08] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +24, now: CPU 0, GPU 45 (MiB)
 ResNet18_FP16 : 10.552897ms => 94.76070476611346FPS 
- ###### ResNet18_P40 ###### 
+######ResNet18_P40######
 [02/11/2025-11:11:08] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3997, GPU 15228 (MiB)
 [02/11/2025-11:11:08] [TRT] [I] Loaded engine size: 90 MiB
 [02/11/2025-11:11:08] [TRT] [V] Using cublas as a tactic source
@@ -11068,7 +11068,7 @@ ResNet18_FP16 : 10.552897ms => 94.76070476611346FPS
 [02/11/2025-11:11:12] [TRT] [V] Allocated activation device memory of size 4816896
 [02/11/2025-11:11:12] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
 ResNet18_P40 : 18.260169ms => 54.76400565618688FPS 
- ###### ResNet18_P40_FP16 ###### 
+######ResNet18_P40_FP16######
 [02/11/2025-11:11:12] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3926, GPU 15156 (MiB)
 [02/11/2025-11:11:12] [TRT] [I] Loaded engine size: 21 MiB
 [02/11/2025-11:11:12] [TRT] [V] Using cublas as a tactic source
@@ -11478,7 +11478,7 @@ ResNet18_P40 : 18.260169ms => 54.76400565618688FPS
 [02/11/2025-11:11:16] [TRT] [V] Allocated activation device memory of size 2408448
 [02/11/2025-11:11:16] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +24, now: CPU 0, GPU 45 (MiB)
 ResNet18_P40_FP16 : 10.680056ms => 93.63247119123838FPS 
- ###### ResNet18_P70 ###### 
+######ResNet18_P70######
 [02/11/2025-11:11:16] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3997, GPU 15227 (MiB)
 [02/11/2025-11:11:16] [TRT] [I] Loaded engine size: 90 MiB
 [02/11/2025-11:11:16] [TRT] [V] Using cublas as a tactic source
@@ -11888,7 +11888,7 @@ ResNet18_P40_FP16 : 10.680056ms => 93.63247119123838FPS
 [02/11/2025-11:11:21] [TRT] [V] Allocated activation device memory of size 4816896
 [02/11/2025-11:11:21] [TRT] [I] [MemUsageChange] TensorRT-managed allocation in IExecutionContext creation: CPU +0, GPU +87, now: CPU 0, GPU 177 (MiB)
 ResNet18_P70 : 18.413072ms => 54.30924399605231FPS 
- ###### ResNet18_P70_FP16 ###### 
+######ResNet18_P70_FP16######
 [02/11/2025-11:11:21] [TRT] [I] [MemUsageChange] Init CUDA: CPU +0, GPU +0, now: CPU 3926, GPU 15153 (MiB)
 [02/11/2025-11:11:21] [TRT] [I] Loaded engine size: 21 MiB
 [02/11/2025-11:11:21] [TRT] [V] Using cublas as a tactic source
