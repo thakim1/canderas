@@ -24,6 +24,7 @@ if __name__ == '__main__':
     log_file = 'data/bench_dump.dat'
     prune = ['','_P40', '_P70']
     precision = ['', '_FP16']
+    acceleration = ['', '_dla0']
 
     cuda.init()
     device = torch.device("cpu") 
@@ -46,41 +47,42 @@ if __name__ == '__main__':
     for model_name in trained_models:
         for pru in prune:
             for prec in precision:
-                # print(f"Benchmarking ---{model_name + pru  + prec}--- fps | {iter} of {len(trained_models)*len(prune)*len(precision)}", end='\r')
+                for acc in acceleration:    
+                    # print(f"Benchmarking ---{model_name + pru  + prec + acc}--- fps | {iter} of {len(trained_models)*len(prune)*len(precision)}", end='\r')
 
-                # Load model as TensoRT engine
-                trt_model_path = model_name + pru + prec + '.trt'
-                if not os.path.exists(trt_model_path):
-                    print(f"Model not found... trying next precision.")
-                    continue
+                    # Load model as TensoRT engine
+                    trt_model_path = model_name + pru + prec + acc + '.trt'
+                    if not os.path.exists(trt_model_path):
+                        print(f"Model not found... trying next precision.")
+                        continue
 
 
-                with open(log_file, 'a') as lf:
-                    lf.write(f"######{model_name + pru  + prec}######\n")
+                    with open(log_file, 'a') as lf:
+                        lf.write(f"######{model_name + pru  + prec + acc}######\n")
 
-                trt_engine = load_trt_engine(trt_logger, trt_model_path)
-                images = load_test_images(img_folder)
-                d_input, d_output, bindings = allocate_buffers(trt_engine)
+                    trt_engine = load_trt_engine(trt_logger, trt_model_path)
+                    images = load_test_images(img_folder)
+                    d_input, d_output, bindings = allocate_buffers(trt_engine)
 
-                total_inf_time = 0
-                iterations = 5
-                for _ in range(iterations):
-                    for i, image in enumerate(images):
-                        anom = image["anomaly"]
-                        img = image["image"]
-                        filename = image["file-name"]
-                        # print(f"img-{i}: {filename}")
+                    total_inf_time = 0
+                    iterations = 5
+                    for _ in range(iterations):
+                        for i, image in enumerate(images):
+                            anom = image["anomaly"]
+                            img = image["image"]
+                            filename = image["file-name"]
+                            # print(f"img-{i}: {filename}")
 
-                        image_in = img.unsqueeze(0).to(device)
-                        t_start = time.time()
-                        inference = perform_inference(trt_engine, d_input, d_output, bindings, image_in)
-                        t_stop = time.time()
-                        total_inf_time = total_inf_time + (t_stop-t_start)
+                            image_in = img.unsqueeze(0).to(device)
+                            t_start = time.time()
+                            inference = perform_inference(trt_engine, d_input, d_output, bindings, image_in)
+                            t_stop = time.time()
+                            total_inf_time = total_inf_time + (t_stop-t_start)
 
-                avg_inf_t = total_inf_time/(iterations*len(images))
-                with open(log_file, 'a') as lf:
-                    lf.write(f"{model_name+pru+prec} : {1e3*avg_inf_t:.6f}ms => {1/avg_inf_t}FPS \n")
-                iter+=1
+                    avg_inf_t = total_inf_time/(iterations*len(images))
+                    with open(log_file, 'a') as lf:
+                        lf.write(f"{model_name+pru+prec+acc} : {1e3*avg_inf_t:.6f}ms => {1/avg_inf_t}FPS \n")
+                    iter+=1
 
         if clear_bug:
             os.system('clear')
@@ -88,3 +90,4 @@ if __name__ == '__main__':
 
     if context:
         context.pop()    
+
