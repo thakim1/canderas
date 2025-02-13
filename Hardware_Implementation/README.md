@@ -18,7 +18,7 @@ In case of the unmodified image the `$image_name` will just be the base image `n
 
 #### 2) Building the models
 
-Before running the benchmark we need to build the `.trt` models from the PyTorch state dictionary. To do just that, simply run the conversion script `python3 convert_models.py`. This script will take all the different, pruned and unpruned models from `Training/Models`, first convert them to the `.onnx` format, and then from the `.onnx` format create the TensorRT engines for both `FP_16` and default precision (`FP_32`). The models will be stored in this directory `/<some_previous_dir>/canderas/Hardware_Implementation`.
+Before running the benchmark we need to build the `.trt` models from the PyTorch state dictionary. To do just that, simply run the conversion script `python3 convert_models.py`. This script will take all the different, pruned and unpruned models from `Training/Models`, first convert them to the `.onnx` format, and then from the `.onnx` format create the TensorRT engines for both `FP16` and default precision (`FP32`). The models will be stored in this directory `/<some_previous_dir>/canderas/Hardware_Implementation`. Building all the different models may very well take 30+ minutes. 
 
 
 #### 3) Running the benchmark
