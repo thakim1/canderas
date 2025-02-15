@@ -1,5 +1,5 @@
 """Script to test container dependencies and libs 
-Disclaimer: This script was AI GENERATED!!!"""
+Disclaimer: This script was AI GENERATED and slightly modified"""
 import torch
 import torch.nn as nn
 import torch.onnx
