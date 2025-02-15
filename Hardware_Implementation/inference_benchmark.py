@@ -1,5 +1,6 @@
-"""This script...
-
+"""This script performs inference latency and memory usage of the TRT IExecution Context 
+for all model/pruning/quantization/acceleration combinations and saves it to specified log_file.
+Consult README.md for more information. 
 """
 
 

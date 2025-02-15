@@ -1,5 +1,5 @@
-"""
-AI GENERATED!!!"""
+"""Disclaimer: This script was AI GENERATED!!!"""
+
 import re
 import matplotlib.pyplot as plt
 

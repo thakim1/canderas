@@ -21,15 +21,14 @@ import traceback
 
 def convert_onnx_to_tensorrt(onnx_model_path, trt_model_path):
     """
-    Docstring content...
+    Converts .onnx format model to both default (FP32) and FP16 .trt model.
 
     Args: 
-        onnx_model_path: ...
-        trt_model_path: ...
+        onnx_model_path: Path to .onnx model to be converted.
+        trt_model_path: Path where to store .trt model. 
     
     Returns: 
-        
-
+        void
     
     """
     # Print only warnings, keep output clean 
@@ -81,13 +80,13 @@ def convert_onnx_to_tensorrt(onnx_model_path, trt_model_path):
 
 def get_model(model_name, prune=None):
     """
-    Docstring content...
+    Loads weights from .pth file for respective model in Training/Models and creates PyTorch instance of specified model.
 
     Args: 
-        model_name: ...
+        model_name: String, chosen model.
 
     Returns: 
-        model: ...
+        model: PyTorch model with loaded weights.
 
     """  
 

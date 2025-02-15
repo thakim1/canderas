@@ -1,5 +1,6 @@
-"""
-Helper functions...
+"""This module contains functions frequently called in the conversion and 
+benchmarks scripts such as memory allocation, image loading, loading of TRT 
+engine etc.  
 """
 
 
@@ -13,15 +14,14 @@ import cv2
 
 def load_trt_engine(trt_logger, engine_file):
     """
-    Docstring content...
+    Loads .trt model/engine from specified file and connect to logger.
 
     Args: 
-        trt_logger: ...
-        engine_file: ...
+        trt_logger: trt.logger, Instance of TRT logger to display inference information (memory, latency, etc.).
+        engine_file: String, .trt model to be loaded.
 
     Returns: 
-        engine: ...
-    
+        engine: Instance of .trt model.
     """
     # From NVIDIA DEV DOCUMENTATION: 
     # When you have a previously serialized optimized model and want to
@@ -50,17 +50,16 @@ def load_trt_engine(trt_logger, engine_file):
 
 def allocate_buffers(engine):
     """
-    Docstring content...
+    Allocate memory on GPU w/ CUDA.
 
     Args: 
-        engine: ...
+        engine: Instantiated .trt engine set to perform inference.
     
     Returns: 
-        d_input: ....
-        d_output: ...
-        bindings: ...
-    
-    
+        d_input: Device memory pointers for the input data.
+        d_output: Device memory pointers for the output data.
+        bindings: Bindings (pointers) to connect the buffers 
+                  to the TRT engine during inference.
     """
 
     #bindings = []
@@ -84,14 +83,15 @@ def perform_inference(engine, d_input, d_output, bindings, image_tensor):
     Docstring content...
 
     Args: 
-        engine: ...
-        d_input: ....
-        d_output: ...
-        bindings: ...
-        image_tensor: ...
+        engine: Instantiated .trt engine set to perform inference.
+        d_input: Device memory pointers for the input data.
+        d_output: Device memory pointers for the output data.
+        bindings: Bindings (pointers) to connect the buffers 
+                  to the TRT engine during inference.
+        image_tensor: Tensor of inference candidate image.
 
     Returns: 
-        output_data: ...    
+        output_data: inference result.    
     
     
     """
@@ -127,16 +127,14 @@ def perform_inference(engine, d_input, d_output, bindings, image_tensor):
 
 def get_img_transform(img_size=224, normalize=([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])):
     """
-    Docstring content...
+    Crop and normalize image with ImageNet normalization parameters. 
 
     Args: 
-        img_size: ...
-        normalize: ...
+        img_size: int, Size of image.
+        normalize: list(int), ImageNet normalization parameters.
 
     Returns: 
-        transform: ...
-
-    
+        transform: Image tensor.
     """
     
     transform = transforms.Compose([
@@ -148,15 +146,13 @@ def get_img_transform(img_size=224, normalize=([0.485, 0.456, 0.406], [0.229, 0.
 
 def load_test_images(img_folder):
     """
-    Docstring content...
+    Loads images to perform inference and measure latency + memory usage. 
 
     Args: 
-        img_folder: ...
+        img_folder: String, Path to image source folder.
 
     Returns: 
-        image_loader: ...
-    
-    
+        image_loader: list(image tensor), List of dictionary with: loaded images, anomaly (y/n), file name of the image.
     """
 
     image_loader = []
@@ -164,12 +160,11 @@ def load_test_images(img_folder):
     for image in os.listdir(img_folder):
         if image.endswith(".png") or image.endswith(".jpg"):
             img_np = cv2.imread(os.path.join(img_folder, image))
+            
             # Check if anomaly is in Image
             anom = 1 if image.startswith("composite") else 0
             #anomaly = torch.tensor([True]) if image.startswith("composite") else torch.tensor([False])
             #anom = anomaly.to(torch.float32).to(device).view((-1,1))
-
-            # TODO: Get additional Anomaly Data here
 
             # Crop and Transform Image
             img_crop = img_np[:img_np.shape[1], : , :]
