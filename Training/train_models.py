@@ -1,24 +1,17 @@
+"""
+Created by Fabian Seiler @ 18.10.2024
+"""
+
 import torch
 from torch import nn
-import torch.nn.functional as F
-from einops import rearrange, repeat
 import torch.utils
-from torchsummary import summary
 from Nordland_dataloader import Nordland
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
-import timm
 import torchvision.transforms as transforms
 import torchvision
-from torchvision import datasets
-from PIL import Image
-import cv2
-from torch.utils.data import Dataset, DataLoader, random_split
-import pandas as pd
-from sklearn.metrics import accuracy_score, precision_score, recall_score
-import torch.nn.utils.prune as prune
-import copy
+from torch.utils.data import DataLoader, random_split
 
 
 def get_transform(img_size=224, normalize=([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])):
@@ -29,53 +22,6 @@ def get_transform(img_size=224, normalize=([0.485, 0.456, 0.406], [0.229, 0.224,
     return transform
 
 
-def global_prune_model(model, prune_method, amount=0.3):
-    """
-    Applies global pruning to a copy of the given model and returns the pruned model.
-    
-    Parameters:
-    model (torch.nn.Module): The original trained PyTorch model.
-    amount (float): The proportion of weights to prune globally. Default is 0.3.
-    
-    Returns:
-    torch.nn.Module: The pruned model with global pruning applied.
-    """
-    pruned_model = copy.deepcopy(model)
-    parameters_to_prune = []
-    
-    # Collect all parameters to be pruned globally
-    for name, module in pruned_model.named_modules():
-        if isinstance(module, torch.nn.Conv2d) or isinstance(module, torch.nn.Linear):
-            # Add (module, 'weight') tuples for pruning
-            parameters_to_prune.append((module, 'weight'))
-    
-    if prune_method == 'L1-Unstructured':
-        # L1 Unstructured Pruning
-        prune.global_unstructured(
-        parameters_to_prune,
-        pruning_method=prune.L1Unstructured,
-        amount=0.3
-        )
-    elif prune_method == 'Random':
-        # Random Unstructured Pruning
-        prune.global_unstructured(
-        parameters_to_prune,
-        pruning_method=prune.RandomUnstructured,
-        amount=0.3
-        )
-
-    elif prune_method == 'L2-Structured':
-        # L2 Structured Pruning
-        prune.global_unstructured(
-        parameters_to_prune,
-        pruning_method=lambda module, name, amount: prune.LnStructured(module, name, amount=amount, n=2, dim=0),
-        amount=0.3
-        )
-    
-    return pruned_model
-
-
-
 if __name__ == '__main__':
 
     # Parameters:
@@ -84,16 +30,9 @@ if __name__ == '__main__':
     batch_size = 32
     gamma=0.1
     weights = 'IMAGENET1K_V1'
-
-    # DenseNet_121
-    # MobileNet_v2
-    # MobileNet_v3_S
-    # ResNet18
-    # EfficientNet_v2_S
-    # MobileNet_v3_B
     
     # Load Dataset and Create Train/Test Split:
-    dataset = Nordland(batch_size=batch_size, root="/srv/harmony/Data/Nordland/AnomDataset", augment=False)
+    dataset = Nordland(batch_size=batch_size, root="/DATASET_PATH", augment=False)
     train_size = int(0.8 * len(dataset))
     test_size = len(dataset) - train_size
     train_dataset, test_dataset = random_split(dataset, [train_size, test_size])

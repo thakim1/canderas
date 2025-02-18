@@ -17,16 +17,6 @@ Dependencies:
  - Jetpack 4.6.2
  - Ubuntu: 18.04 Bionic Beaver
 
-Python3.6 compatible versions of used libs: 
- - einops==?  einops doesn't say to run with Python3.6
- - torch-summary==1.4.5 
- - pillow==8.4.0  
- - timm==0.6.12 
- - pandas==1.1.5 
- - scikit-learn==0.24.2
- - matplotlib==3.3.4 
- - tqdm==4.64.1 
- - opencv-python-headless  opencv-python-headless works with all python versions >= 3.6
 
 # Table of Contents
 
@@ -89,15 +79,13 @@ If the container has not been given a distinct name in docker run command it wil
 - Jetson Pytorch Container Ref on Github: https://github.com/dusty-nv/jetson-containers/tree/master/packages/l4t/l4t-pytorch
 - Jetson Zoo: https://elinux.org/Jetson_Zoo#PyTorch_.28Caffe2.29
 
-## Contributions
+## Contributors
 
-Contributions to the project...
+Hakim Tayari, Fabian Seiler, Karel Rusy
+
+hakim.tayari@tuwien.ac.at, fabian.seiler@tuwien.ac.at, karel.rusy@tuwien.ac.at
 
 ## License
 
 Detail the license under which your project is distributed.
-
-## Acknowledgments
-
-List any acknowledgments or credits to others.
 

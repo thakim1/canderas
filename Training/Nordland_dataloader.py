@@ -2,21 +2,18 @@
 author: Fabian Seiler @ 20.06.24
 """
 import os
-from torchvision import datasets, transforms
+from torchvision import transforms
 import torchvision.transforms.functional as F
-from torchvision.datasets import VisionDataset
 import torch
 import cv2
 from tqdm import tqdm
-import numpy as np
-import matplotlib.pyplot as plt
 
 
 # Loads Test/Training Data into one Data folder
 
 class Nordland():
 
-    def __init__(self, batch_size, root="/srv/harmony/Data/Nordland/Segmentation_new", augment: bool = False):
+    def __init__(self, batch_size, root="/DATASET_PATH", augment: bool = False):
 
         self.root = root
         self.batch_size = batch_size
@@ -32,14 +29,7 @@ class Nordland():
         return self.data[index]
     
     def __len__(self):
-        
         return len(self.data)
-
-        total_samples = 0
-        for batch in self.data:
-            
-            total_samples += batch[0].size(0)  # batch[0] is the images tensor
-        return total_samples
 
     def crop_img(self, img, h_line, v_delta):
         #img = cv2.cvtColor(img, cv2.COLOR_BRG2RGB)
@@ -114,15 +104,3 @@ class Nordland():
         # Stack the images + ground truths
         train_normal_images = torch.stack(train_imgs)
         return list(zip(train_anomaly, train_normal_images))
-
-
-if __name__ == '__main__':
-    dataset = Nordland(batch_size=1, root="/srv/harmony/Data/Nordland/Binary_classification", augment=False)
-    #for i in dataset.train_loader:
-        #print(i)
-    for data in dataset:
-        anom, img = data
-        #print(img.shape)
-        print(anom)
-        print(img.shape)
-
