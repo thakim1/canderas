@@ -44,7 +44,7 @@ Dependencies:
 
 ### Some commands to get along with docker easily 
 - Start docker container
-`docker run -it --rm --network host --runtime nvidia -v /home/cdleml/canderas/:/home/canderas <name>`
+`docker run -it --rm --network host --runtime nvidia -v "$src_dir":"$trg_dir" "$image_name"`
 In case of the unmodified image the name will just be the base image nvcr.io/nvidia/l4t-ml:r32.7.1-py3r
 
 - Show running containers
@@ -61,19 +61,18 @@ If the container has not been given a distinct name in docker run command it wil
 - HOW TO DLA: [https://github.com/NVIDIA-AI-IOT/jetson_dla_tutorial?tab=readme-ov-file#step-5](https://github.com/NVIDIA-AI-IOT/jetson_dla_tutorial)
 - HOW TO DLA SW: https://github.com/NVIDIA/Deep-Learning-Accelerator-SW
 - DustyNV - Jetson Intefernce Tutorial: https://github.com/dusty-nv/jetson-inference/tree/master
-- Blog Post on TensorRT: https://vilsonrodrigues.medium.com/a-friendly-introduction-to-tensorrt-building-engines-de8ae0b74038
-- General TensorRT Repo by NVIDIA: https://github.com/NVIDIA/TensorRT
-- Cuda Toolkit Download Site: https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&target_arch=ppc64le&target_distro=Ubuntu&target_version=1804&target_type=debnetwork
+- TRT Blog Post: https://vilsonrodrigues.medium.com/a-friendly-introduction-to-tensorrt-building-engines-de8ae0b74038
+- NVIDIA TRT Repo: https://github.com/NVIDIA/TensorRT
+- Cuda Toolkit Download: https://developer.nvidia.com/cuda-10.2-download-archive?target_os=Linux&target_arch=ppc64le&target_distro=Ubuntu&target_version=1804&target_type=debnetwork
 
-- TensorRT Quickstart: https://docs.nvidia.com/deeplearning/tensorrt/quick-start-guide/index.html
-- TensorRT Install Guide: https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#installing-tar
-- TensorRT Containers Release Notes: https://docs.nvidia.com/deeplearning/tensorrt/container-release-notes/index.html#rel_20-11
-- TensorRT Developer Guide: https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html#object-lifetimes
-- TensorRT Python API Documentation: https://docs.nvidia.com/deeplearning/tensorrt/api/python_api/index.html
+- TRT Quickstart: https://docs.nvidia.com/deeplearning/tensorrt/quick-start-guide/index.html
+- TRT Install Guide: https://docs.nvidia.com/deeplearning/tensorrt/install-guide/index.html#installing-tar
+- TRT Release Notes: https://docs.nvidia.com/deeplearning/tensorrt/container-release-notes/index.html#rel_20-11
+- TRT Dev Guide: https://docs.nvidia.com/deeplearning/tensorrt/developer-guide/index.html#object-lifetimes
+- TRT Python API Documentation: https://docs.nvidia.com/deeplearning/tensorrt/api/python_api/index.html
 
 ### Docker Container Resources:
 - Container Catalog: https://catalog.ngc.nvidia.com/containers?filters=architecture%7CMulti+Arch%7Ccontainers_multiarch&orderBy=weightPopularDESC&query=&page=&pageSize=
-
 - x86 pytorch CUDA Container: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/pytorch
 - Jetson pytorch CUDA Container: https://catalog.ngc.nvidia.com/orgs/nvidia/containers/l4t-pytorch
 - Jetson Pytorch Container Ref on Github: https://github.com/dusty-nv/jetson-containers/tree/master/packages/l4t/l4t-pytorch
