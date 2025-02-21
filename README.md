@@ -24,21 +24,18 @@ Dependencies:
 2. [Important Resources](#important-resources) 
 3. [Contributing](#contributions)
 4. [License](#license)
-5. [Acknowledgments](#acknowledgments)
 
 ---
 
 ## Folder Structure
 
-- `Evaluation`: Contains scripts to evaluate models on the data in Images
 - `Training`: Contains training script & original dataloader to the harmony server, Subfolder with pretrained Models
-- `Pruning_Quantization`: Holds the scripts/code for pruning and quantization
+- `Pruning_Quantization`: Contains scripts/code to optimize and evaluate the models on the software side
+- `Hardware_Implementation`: Contains scripts/code on how to map the networks on the Jetson
 - `Images`: Holds Example Images to evaluate/showcase
-- `Hardware_Optimization`: Contains scripts/code to optimize the pretrained models for the Jetson
-
 - `run_docker`: Starts container with lengthy command detailed in [docker section](#some-commands-to-get-along-with-docker-easily).
 - `test_l4tml_container.py`: Basic test for base image dependencies/libraries
-- showcase.py ... TODO
+- `test_model.py`: Run an script that evaluates an inference of the networks on example images
 
 ## Important Resources 
 
@@ -86,5 +83,5 @@ hakim.tayari@tuwien.ac.at, fabian.seiler@tuwien.ac.at, karel.rusy@tuwien.ac.at
 
 ## License
 
-Detail the license under which your project is distributed.
-
+The training and optimization part of this project is licensed under the MIT Lincese.
+The actual training images are part of an ongoing research project and can therefore not be published.

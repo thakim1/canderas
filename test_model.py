@@ -1,26 +1,11 @@
 import torch
 from torch import nn
-import torch.nn.functional as F
-from einops import rearrange, repeat
 import torch.utils
-from torchsummary import summary
-from Nordland_dataloader import Nordland
-import numpy as np
-import matplotlib.pyplot as plt
-from tqdm import tqdm
-import timm
 import torchvision.transforms as transforms
 import torchvision
-from torchvision import datasets
-from PIL import Image
 import cv2
-from torch.utils.data import Dataset, DataLoader, random_split
-import pandas as pd
-from sklearn.metrics import accuracy_score, precision_score, recall_score
-import torch.nn.utils.prune as prune
-import copy
 import os
-import json
+
 
 
 def get_transform(img_size=224, normalize=([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])):
@@ -86,8 +71,8 @@ def load_test_images(img_folder):
 
 if __name__ == '__main__':
 
-    img_folder = "./SoC_Labor/Images"
-    weights = "./SoC_Labor/Models/MobileNetV2_weights"
+    img_folder = "./Images"
+    weights = "./Models/MobileNetV2_weights"
     model_name = ['DenseNet', 'MobileNetV2', 'MobileNetV3', 'ResNet18', 'EfficientNet', 'MobileNetV3_big'][1]
 
     # Load Model
@@ -109,6 +94,4 @@ if __name__ == '__main__':
         result = model(img.unsqueeze(0).to(device))
         print(f"Estimate={result.detach().cpu().numpy()[0][0]:.2f} | Exact={anom}")
 
-
-    # Plotting
     

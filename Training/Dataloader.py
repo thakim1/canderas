@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 # Loads Test/Training Data into one Data folder
 
-class Nordland():
+class Dataloader():
 
     def __init__(self, batch_size, root="/DATASET_PATH", augment: bool = False):
 

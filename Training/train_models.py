@@ -5,7 +5,8 @@ Created by Fabian Seiler @ 18.10.2024
 import torch
 from torch import nn
 import torch.utils
-from Nordland_dataloader import Nordland
+from Dataloader import Dataloader
+from KRD_dataloader import KRD
 import numpy as np
 import matplotlib.pyplot as plt
 from tqdm import tqdm
@@ -32,7 +33,11 @@ if __name__ == '__main__':
     weights = 'IMAGENET1K_V1'
     
     # Load Dataset and Create Train/Test Split:
-    dataset = Nordland(batch_size=batch_size, root="/DATASET_PATH", augment=False)
+
+    # ------- Either Load generic Data or KRD Dataset
+
+    #dataset = KRD(batch_size=batch_size, root="/DATASET_PATH", augment=False)
+    dataset = Dataloader(batch_size=batch_size, root="/DATASET_PATH", augment=False)
     train_size = int(0.8 * len(dataset))
     test_size = len(dataset) - train_size
     train_dataset, test_dataset = random_split(dataset, [train_size, test_size])
