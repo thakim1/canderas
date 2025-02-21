@@ -16,7 +16,6 @@ import time
 if __name__ == '__main__':
 
 
-    # First network here twice because of bug where first network has memory alloc error, no idea why atm
     trained_models = ['DenseNet', 'DenseNet', 'MobileNetV2', 'MobileNetV3', 'MobileNetV3_Large', 'ResNet18']
     clear_bug = True
 
