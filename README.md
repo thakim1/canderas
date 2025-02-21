@@ -7,8 +7,10 @@ is maintained by Fabian Seiler, Karel Rusy, Hakim Tayari
 
 ## General Info
 
-Hardware: Jetson Xavier, Platform: 4.9.253-tegra
-Docker base image: nvcr.io/nvidia/l4t-ml:r32.7.1-py3
+This project was developed for the SoC Lab course of TU Wien. \
+
+Hardware: Jetson Xavier, Platform: 4.9.253-tegra \
+Docker base image: nvcr.io/nvidia/l4t-ml:r32.7.1-py3 \
 Dependencies: 
  - Python: 3.6.9
  - CUDA: 10.2.300
